@@ -1,0 +1,52 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+proxies:
+- name: 🇩🇪 德国 (Germany) 01 (家宽) - xiaohe
+  server: 212.193.1.234
+  port: 443
+  udp: true
+  type: vless
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  tls: true
+  servername: cdn8848.776676.xyz
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /image
+    headers:
+      Host: cdn8848.776676.xyz
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - ⚡ 自动优选
+  - 🏠 住宅家宽
+  - DIRECT
+  - 🇩🇪 德国 (Germany) 01 (家宽) - xiaohe
+- name: ⚡ 自动优选
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 🇩🇪 德国 (Germany) 01 (家宽) - xiaohe
+- name: 🏠 住宅家宽
+  type: select
+  proxies:
+  - ⚡ 家宽优选
+  - 🇩🇪 德国 (Germany) 01 (家宽) - xiaohe
+- name: ⚡ 家宽优选
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 🇩🇪 德国 (Germany) 01 (家宽) - xiaohe
+rules:
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择

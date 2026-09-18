@@ -5,48 +5,59 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇨🇿 捷克 (Czech) 01 - xiaohe
-  server: 188.114.97.6
+  server: 172.64.80.1
+  port: 2053
+  udp: true
+  type: vless
+  uuid: 2b8738de-1af5-4267-b101-c05707769ed4
+  tls: true
+  servername: fans.liverpool.qzz.io
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiZXlpMnFWRURmWkp5ZCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    headers:
+      Host: fans.liverpool.qzz.io
+- name: 🇨🇿 捷克 (Czech) 02 - xiaohe
+  server: wgrcqwtkfyqujs43.ghydgdbdbddvv.workers.dev
   port: 443
   udp: true
   type: vless
-  uuid: e56059f1-5a1a-4d0a-a2d0-58ecb4eb2f3f
+  uuid: 07821f66-cdb7-4c70-9de6-e230cffac470
   tls: true
-  servername: ezaccess-project-f62c30.pages.dev
+  servername: wgrcqwtkfyqujs43.ghydgdbdbddvv.workers.dev
   skip-cert-verify: false
-  client-fingerprint: chrome
   network: ws
   ws-opts:
-    path: /eyJqdW5rIjoiZWlPODVjTnhnaSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
-    headers:
-      Host: ezaccess-project-f62c30.pages.dev
-- name: 🇨🇿 捷克 (Czech) 02 - xiaohe
-  server: 132.243.203.207
-  port: 8443
+    path: /vl/li1khihh3dnitjyzraemspbqvu
+- name: 🇨🇿 捷克 (Czech) 03 - xiaohe
+  server: fast.news.gazette.help
+  port: 443
   udp: true
-  type: vless
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  tls: true
-  servername: cdn8848.776676.xyz
+  type: hysteria2
+  password: c-E0lamG8OnEj9M_uh3oJPmIXqYIVGctO-NHELF1TmNYs7Jl
+  sni: cz.h2.cleanersaz.help
   skip-cert-verify: false
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /lives
-    headers:
-      Host: cdn8848.776676.xyz
 proxy-groups:
-- name: PROXIES
+- name: 🚀 节点选择
   type: select
   proxies:
-  - AUTO
+  - ⚡ 自动优选
+  - DIRECT
   - 🇨🇿 捷克 (Czech) 01 - xiaohe
   - 🇨🇿 捷克 (Czech) 02 - xiaohe
-- name: AUTO
+  - 🇨🇿 捷克 (Czech) 03 - xiaohe
+- name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 50
   proxies:
   - 🇨🇿 捷克 (Czech) 01 - xiaohe
   - 🇨🇿 捷克 (Czech) 02 - xiaohe
+  - 🇨🇿 捷克 (Czech) 03 - xiaohe
 rules:
-- MATCH,PROXIES
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择

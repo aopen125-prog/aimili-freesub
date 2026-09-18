@@ -14,20 +14,23 @@ proxies:
   tls: true
   reality-opts:
     public-key: 6-_ZidygR8PRt4gtHlGCAW-PPmjEIm7Wn7MZqJU1z1Q
-    short-id: 6c059ecfddf9b179
   servername: gateway.icloud.com
-  client-fingerprint: random
+  client-fingerprint: chrome
 proxy-groups:
-- name: PROXIES
+- name: 🚀 节点选择
   type: select
   proxies:
-  - AUTO
+  - ⚡ 自动优选
+  - DIRECT
   - 🇬🇹 GT 01 - xiaohe
-- name: AUTO
+- name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 50
   proxies:
   - 🇬🇹 GT 01 - xiaohe
 rules:
-- MATCH,PROXIES
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择
