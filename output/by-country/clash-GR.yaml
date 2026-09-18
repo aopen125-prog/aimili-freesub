@@ -1,42 +1,35 @@
+mixed-port: 7890
 port: 7890
 socks-port: 7891
 allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇬🇷 希腊 (Greece) 01 - xiaohe
-  server: 94.241.174.157
-  port: 40443
-  udp: true
-  type: vless
-  uuid: 8ac637bf-554e-4902-94d7-baf01780a83c
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: mM33xyzf1GPaU2CQXAGYoGkTuYzEZRYT6S-NngyqfHQ
-    short-id: beb4
-  servername: deepl.com
-  client-fingerprint: chrome
 - name: 🇬🇷 希腊 (Greece) 02 - xiaohe
-  server: 85.90.197.220
+  server: 172.65.32.1
   port: 443
   udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: www.cloudflare.com
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
   type: vless
   uuid: 8f704ed6-9a1a-4d04-94dd-1bff501716de
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4
-    short-id: 94acb54627612d43
   servername: www.cloudflare.com
-  client-fingerprint: chrome
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇬🇷 希腊 (Greece) 01 - xiaohe
   - 🇬🇷 希腊 (Greece) 02 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
@@ -44,7 +37,6 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇬🇷 希腊 (Greece) 01 - xiaohe
   - 🇬🇷 希腊 (Greece) 02 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT

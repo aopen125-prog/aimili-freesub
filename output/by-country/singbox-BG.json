@@ -23,10 +23,10 @@
         "enabled": true,
         "server_name": "neth9.lunariai.ru",
         "insecure": false,
-        "alpn": [
-          "h2",
-          "http/1.1"
-        ]
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       }
     },
     {
@@ -41,7 +41,7 @@
         "server_name": "www.apple.com",
         "utls": {
           "enabled": true,
-          "fingerprint": "random"
+          "fingerprint": "chrome"
         },
         "reality": {
           "enabled": true,
@@ -62,7 +62,7 @@
         "server_name": "yandex.ru",
         "utls": {
           "enabled": true,
-          "fingerprint": "randomized"
+          "fingerprint": "firefox"
         },
         "reality": {
           "enabled": true,

@@ -1,148 +1,106 @@
+mixed-port: 7890
 port: 7890
 socks-port: 7891
 allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇨🇦 加拿大 (Canada) 01 - xiaohe
-  server: 216.152.147.28
-  port: 443
-  udp: true
-  type: vless
-  uuid: d9e4721d-cdac-44c7-bc91-117367eac194
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: kjiuPmjM4IutdZudHfcPZHEwcrBEFY4qBLlvfC6A_Ss
-    short-id: b9f8d3f8
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
 - name: 🇨🇦 加拿大 (Canada) 02 - xiaohe
-  server: 15.223.122.197
+  server: 104.16.24.1
   port: 443
   udp: true
-  type: hysteria2
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: 15.223.122.197
+  tls: true
   skip-cert-verify: true
-- name: 🇨🇦 加拿大 (Canada) 03 - xiaohe
-  server: 66.70.179.198
-  port: 2053
-  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: www.cloudflare.com
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
   type: vless
   uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
-  tls: true
-  reality-opts:
-    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
-    short-id: 83f8317a948bb769
   servername: www.cloudflare.com
-  client-fingerprint: random
-- name: 🇨🇦 加拿大 (Canada) 04 - xiaohe
-  server: 130.107.73.148
-  port: 41373
-  udp: true
-  type: vless
-  uuid: a71c8954-66a8-4321-bedb-2336230d81ce
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: m0GsZOAwvAJEaqh9aH6qfOmBKo0KW0jY_tJEC6KaDEU
-    short-id: 0e
-  servername: google.com
-  client-fingerprint: edge
-- name: 🇨🇦 加拿大 (Canada) 05 - xiaohe
-  server: 158.69.112.254
+- name: 🇨🇦 加拿大 (Canada) 03 - xiaohe
+  server: 162.159.193.1
   port: 443
   udp: true
-  type: vless
-  uuid: 661f395d-b153-4199-a04b-693f5fe7f261
-  flow: xtls-rprx-vision
   tls: true
-  reality-opts:
-    public-key: wo417FrFdjy7ZhccQ-VWGZEKcoCHSEfyWcJT1pIVc1Y
-    short-id: 3d3c1e645f763ee3
-  servername: www.speedtest.net
+  skip-cert-verify: true
   client-fingerprint: chrome
-- name: 🇨🇦 加拿大 (Canada) 06 - xiaohe
-  server: 209.200.246.148
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: www.cloudflare.com
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: d9e4721d-cdac-44c7-bc91-117367eac194
+  servername: www.cloudflare.com
+- name: 🇨🇦 加拿大 (Canada) 05 - xiaohe
+  server: 172.67.180.1
   port: 443
   udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: www.cloudflare.com
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
   type: vless
   uuid: ca52e2b6-fb9f-4dac-b6dc-49da9923f251
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk
-    short-id: f98843107912e782
   servername: www.cloudflare.com
-  client-fingerprint: random
-- name: 🇨🇦 加拿大 (Canada) 07 - xiaohe
-  server: 104.21.70.21
-  port: 443
+- name: 🇨🇦 加拿大 (Canada) 08 - xiaohe
+  server: 172.66.44.77
+  port: 2053
   udp: true
-  type: vless
-  uuid: efe19c5a-0ea1-4666-8a4c-4a33f4670775
   tls: true
-  servername: playlux.homes
-  skip-cert-verify: false
+  skip-cert-verify: true
   client-fingerprint: chrome
+  alpn:
+  - http/1.1
   network: ws
   ws-opts:
     path: /raccoonwsvless
     headers:
       Host: playlux.homes
-- name: 🇨🇦 加拿大 (Canada) 08 - xiaohe
-  server: 66.70.179.124
-  port: 443
-  udp: true
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: c8f9e08d-7d07-4059-9f71-0b014b9e0ec7
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: feWlxnxySxB9B9HiuC4NwoTe_6slRqaW-EULPN0yxjY
-    short-id: af7e79b5
-  servername: www.apple.com
-  client-fingerprint: random
-- name: 🇨🇦 加拿大 (Canada) 09 - xiaohe
-  server: 184.107.106.68
-  port: 443
-  udp: true
-  type: vless
-  uuid: 716426fa-bcb7-4eb9-b460-36399ebf740d
-  tls: true
-  servername: lizca2.footballfantasyforum.com
-  skip-cert-verify: true
+  uuid: efe19c5a-0ea1-4666-8a4c-4a33f4670775
+  servername: playlux.homes
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇨🇦 加拿大 (Canada) 01 - xiaohe
   - 🇨🇦 加拿大 (Canada) 02 - xiaohe
   - 🇨🇦 加拿大 (Canada) 03 - xiaohe
-  - 🇨🇦 加拿大 (Canada) 04 - xiaohe
   - 🇨🇦 加拿大 (Canada) 05 - xiaohe
-  - 🇨🇦 加拿大 (Canada) 06 - xiaohe
-  - 🇨🇦 加拿大 (Canada) 07 - xiaohe
   - 🇨🇦 加拿大 (Canada) 08 - xiaohe
-  - 🇨🇦 加拿大 (Canada) 09 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇨🇦 加拿大 (Canada) 01 - xiaohe
   - 🇨🇦 加拿大 (Canada) 02 - xiaohe
   - 🇨🇦 加拿大 (Canada) 03 - xiaohe
-  - 🇨🇦 加拿大 (Canada) 04 - xiaohe
   - 🇨🇦 加拿大 (Canada) 05 - xiaohe
-  - 🇨🇦 加拿大 (Canada) 06 - xiaohe
-  - 🇨🇦 加拿大 (Canada) 07 - xiaohe
   - 🇨🇦 加拿大 (Canada) 08 - xiaohe
-  - 🇨🇦 加拿大 (Canada) 09 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

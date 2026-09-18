@@ -1,3 +1,4 @@
+mixed-port: 7890
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -5,11 +6,14 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇹🇷 土耳其 (Turkey) 01 - xiaohe
-  server: 104.19.24.1
+  server: 104.21.16.1
   port: 443
   udp: true
-  type: vless
-  uuid: a22bff60-a40a-4250-bde2-4c660e363b47
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
   network: ws
   ws-opts:
     path: /
@@ -17,33 +21,28 @@ proxies:
       Host: index.harmonica02.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
-  tls: true
+  type: vless
+  uuid: a22bff60-a40a-4250-bde2-4c660e363b47
   servername: iNdEx.hArMoNiCa02.woRkErs.dEv
 - name: 🇹🇷 土耳其 (Turkey) 02 - xiaohe
-  server: 156.67.63.231
+  server: 172.64.32.1
   port: 443
   udp: true
-  type: vless
-  uuid: b052df40-d51c-456c-9bd6-57af01a87e4e
-  flow: xtls-rprx-vision
   tls: true
-  reality-opts:
-    public-key: PTqeBbbr2xJ1L3V1PyYjKjxanMKKqJHU-wtnpYmFQCI
-    short-id: 5606d4a25c99e7af
-  servername: sync-bridge.org
+  skip-cert-verify: true
   client-fingerprint: chrome
-- name: 🇹🇷 土耳其 (Turkey) 03 - xiaohe
-  server: 151.241.226.201
-  port: 2053
-  udp: true
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /rry8le3tt8f3g5j7kr
+    headers:
+      Host: index.harmonica02.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8
-  tls: true
-  reality-opts:
-    public-key: bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104
-    short-id: 9e419c0759b54d6f
-  servername: www.apple.com
-  client-fingerprint: firefox
+  uuid: a22bff60-a40a-4250-bde2-4c660e363b47
+  servername: iNdEx.hArMoNiCa02.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -52,7 +51,6 @@ proxy-groups:
   - DIRECT
   - 🇹🇷 土耳其 (Turkey) 01 - xiaohe
   - 🇹🇷 土耳其 (Turkey) 02 - xiaohe
-  - 🇹🇷 土耳其 (Turkey) 03 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -61,7 +59,6 @@ proxy-groups:
   proxies:
   - 🇹🇷 土耳其 (Turkey) 01 - xiaohe
   - 🇹🇷 土耳其 (Turkey) 02 - xiaohe
-  - 🇹🇷 土耳其 (Turkey) 03 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT
