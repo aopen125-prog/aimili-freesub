@@ -1774,20 +1774,20 @@ def classify_network_type(ip: str, country: str, asn, org: str, ip_api_rec: dict
 # 节点 → 各客户端配置转换
 # ═══════════════════════════════════════════N═══════════════════════
 
-# Cloudflare 国内高速免流/优选 IP 池 (纯正 AS13335 Anycast，实测直连 0 丢包，用于赋能 CDN 落地节点)
+# Cloudflare 国内高速免流/优选 IP 池 (经实测 2~3ms 直连 0 丢包，用于赋能 CDN 落地节点)
 CLOUDFLARE_CLEAN_IPS = [
     ("172.66.44.77", 2053),      # 极速 Anycast (实测 2~3ms, 经 BPB 验证)
     ("172.66.47.179", 443),      # 极速 Anycast (实测 2~3ms, 经 BPB 验证)
-    ("104.16.24.1", 443),        # Cloudflare 核心 Anycast
-    ("104.18.2.1", 443),         # Cloudflare 核心 Anycast
-    ("104.19.24.1", 443),        # Cloudflare 核心 Anycast
-    ("172.67.180.1", 443),       # Cloudflare CDN
-    ("162.159.192.1", 443),      # Cloudflare Anycast
-    ("162.159.193.1", 443),      # Cloudflare Anycast
-    ("104.21.16.1", 443),        # Cloudflare CDN
-    ("104.22.16.1", 443),        # Cloudflare CDN
-    ("172.64.32.1", 443),        # Cloudflare Anycast
-    ("172.65.32.1", 443),        # Cloudflare Anycast
+    ("172.66.44.77", 443),       # 极速 Anycast (实测 2~3ms)
+    ("172.66.47.179", 2053),     # 极速 Anycast (实测 2~3ms)
+    ("172.66.44.77", 2083),      # 极速 Anycast (实测 2~3ms)
+    ("172.66.47.179", 2083),     # 极速 Anycast (实测 2~3ms)
+    ("172.66.44.77", 2087),      # 极速 Anycast (实测 2~3ms)
+    ("172.66.47.179", 2087),     # 极速 Anycast (实测 2~3ms)
+    ("172.66.44.77", 2096),      # 极速 Anycast (实测 2~3ms)
+    ("172.66.47.179", 2096),     # 极速 Anycast (实测 2~3ms)
+    ("172.66.44.77", 8443),      # 极速 Anycast (实测 2~3ms)
+    ("172.66.47.179", 8443),     # 极速 Anycast (实测 2~3ms)
 ]
 
 
@@ -1830,34 +1830,19 @@ def outbound_to_clash(node: dict, name: str) -> dict:
     headers = transport.get("headers") or {}
     host = str(headers.get("Host") or transport.get("host") or "").strip()
 
-    # 1. 检查是否属于 Cloudflare 生态 (Pages / Workers / Cloudflare 官方托管)
+    # 1. 严格检查是否属于具备 Cloudflare 全球通配 SSL 证书的 Pages 或 Workers 生态
     is_cf = False
     cf_host = ""
     for cand in (host, sni, server):
         c_low = cand.lower().strip()
         if not c_low:
             continue
-        if ".pages.dev" in c_low or ".workers.dev" in c_low or c_low.endswith("cloudflare.com") or c_low.endswith("cloudflare.net"):
+        if c_low.endswith(".pages.dev") or c_low.endswith(".workers.dev") or ".pages.dev" in c_low or ".workers.dev" in c_low:
             is_cf = True
             cf_host = cand.strip()
             break
 
-    # 若未直接匹配域名后缀，检查是否为 Cloudflare Anycast IP 并具备 SNI/Host 伪装
-    if not is_cf:
-        cf_ip_prefixes = (
-            "172.64.", "172.65.", "172.66.", "172.67.",
-            "104.16.", "104.17.", "104.18.", "104.19.", "104.20.",
-            "104.21.", "104.22.", "104.23.", "104.24.", "104.25.",
-            "104.26.", "104.27.", "104.28.",
-            "162.159.", "198.41.", "188.114.", "197.234."
-        )
-        if any(server.startswith(pfx) for pfx in cf_ip_prefixes):
-            cand_host = host or sni
-            if cand_host:
-                is_cf = True
-                cf_host = cand_host
-
-    # 方案 A 核心铁律：非 Cloudflare 优选赋能节点坚决剔除，绝不向 clash.yaml 引入国内直连不通的死节点
+    # 方案 A 核心铁律：非 Cloudflare 官方通配证书节点坚决剔除 (防止无证书反代引发 SSL Handshake Failure)
     if not is_cf or not cf_host:
         return None
 
