@@ -11,10 +11,7 @@
       "uuid": "9f73cf9a-c68f-4e6d-90f0-e66b64f52f8a",
       "transport": {
         "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "neth9.lunariai.ru"
-        }
+        "path": "/"
       }
     },
     {
@@ -29,7 +26,7 @@
         "insecure": false,
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       }
     },
@@ -66,7 +63,7 @@
         "server_name": "yandex.ru",
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "randomized"
         },
         "reality": {
           "enabled": true,
