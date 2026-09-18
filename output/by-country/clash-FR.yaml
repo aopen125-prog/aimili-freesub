@@ -5,47 +5,9 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇫🇷 法国 (France) 01 - xiaohe
-  server: 104.19.24.1
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /vl/bluTTbb7MO8rvX1COEYH4WW4qzbr2aui
-    headers:
-      Host: netra-85a0ca.shoameni19.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 20836693-ea23-4f40-a1e7-48a6da897917
-  servername: nEtRa-85a0cA.ShOaMeNi19.woRkErs.dEv
-- name: 🇫🇷 法国 (France) 13 - xiaohe
-  server: 162.159.193.1
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: www.cloudflare.com
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: edb50d20-2d3e-4c1e-8a75-a17168a89aa5
-  servername: www.cloudflare.com
-- name: 🇫🇷 法国 (France) 14 - xiaohe
+- name: 🇫🇷 法国 (France) 03 - xiaohe
   server: 172.66.47.179
-  port: 443
+  port: 8443
   udp: true
   tls: true
   skip-cert-verify: true
@@ -54,32 +16,49 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /
+    path: /stream/PANEL_ZEUS/5a26a30b00dc
     headers:
-      Host: www.cloudflare.com
+      Host: 4qzsz6e8u00s.tlzw8le6ubhs.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  servername: www.cloudflare.com
+  uuid: 50414e45-4c5f-5a45-5553-5a26a30b00dc
+  servername: 4QzSz6e8u00S.TlZw8lE6UbHs.woRkErs.dEv
+- name: 🇫🇷 法国 (France) 17 - xiaohe
+  server: 172.66.44.77
+  port: 8443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /stream/TrexBridge/ef859652a80e
+    headers:
+      Host: trex-panel-nubj0s.samifakor.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 50414e45-4c5f-5a45-5553-ef859652a80e
+  servername: tReX-PaNeL-NuBj0s.sAmIfAkOr.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇫🇷 法国 (France) 01 - xiaohe
-  - 🇫🇷 法国 (France) 13 - xiaohe
-  - 🇫🇷 法国 (France) 14 - xiaohe
+  - 🇫🇷 法国 (France) 03 - xiaohe
+  - 🇫🇷 法国 (France) 17 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇫🇷 法国 (France) 01 - xiaohe
-  - 🇫🇷 法国 (France) 13 - xiaohe
-  - 🇫🇷 法国 (France) 14 - xiaohe
+  - 🇫🇷 法国 (France) 03 - xiaohe
+  - 🇫🇷 法国 (France) 17 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

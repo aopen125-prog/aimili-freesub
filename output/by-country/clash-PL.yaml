@@ -6,8 +6,8 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇵🇱 波兰 (Poland) 01 - xiaohe
-  server: 104.16.24.1
-  port: 443
+  server: 172.66.47.179
+  port: 2096
   udp: true
   tls: true
   skip-cert-verify: true
@@ -24,25 +24,6 @@ proxies:
   type: vless
   uuid: e6cc4788-3c45-4df1-94f3-8303504a65bf
   servername: kHoDa.aK-KhOdA.woRkErs.dEv
-- name: 🇵🇱 波兰 (Poland) 12 - xiaohe
-  server: 172.64.32.1
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: www.cloudflare.com
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 05488656-d4bf-4634-8b2e-e4ff5a56c7e2
-  servername: www.cloudflare.com
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -50,7 +31,6 @@ proxy-groups:
   - ⚡ 自动优选
   - DIRECT
   - 🇵🇱 波兰 (Poland) 01 - xiaohe
-  - 🇵🇱 波兰 (Poland) 12 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -58,7 +38,6 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇵🇱 波兰 (Poland) 01 - xiaohe
-  - 🇵🇱 波兰 (Poland) 12 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

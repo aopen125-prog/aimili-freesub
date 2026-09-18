@@ -6,8 +6,8 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
-  server: 172.64.32.1
-  port: 443
+  server: 172.66.44.77
+  port: 2096
   udp: true
   tls: true
   skip-cert-verify: true
@@ -16,14 +16,14 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /
+    path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
     headers:
-      Host: www.cloudflare.com
+      Host: netlivpn2584.vjvdgbc.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 3950b45e-740d-4dca-ac95-505ec8534592
-  servername: www.cloudflare.com
+  uuid: 7074b9d7-2183-8919-fc11-ca5e00000000
+  servername: nEtLiVpN2584.VjVdGbC.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
