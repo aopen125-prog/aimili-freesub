@@ -54,14 +54,14 @@ except ImportError as e:
 
 SOURCE_URLS = [
     "https://wild-cloud-9893.heleimail.workers.dev",
-    "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
-    "https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/all.txt",
-    "https://raw.githubusercontent.com/10ium/HiN-VPN/main/subscription/base64/mix",
-    "https://raw.githubusercontent.com/10ium/telegram-configs-collector/main/protocols/hysteria",
-    "https://raw.githubusercontent.com/10ium/telegram-configs-collector/main/security/tls",
-    "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt",
-    "https://raw.githubusercontent.com/freefq/free/master/v2",
     "https://open.heleimail.workers.dev/",
+    "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
+    "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/v2ray-base64-TW.txt",
+    "https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/all_extracted_configs.txt",
+    "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/splitted/mixed",
+    "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+    "https://raw.githubusercontent.com/freefq/free/master/v2",
+    "https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/all.txt",
     "https://www.ermao.net/sub/v2ray/ermao.net",
     "https://raw.githubusercontent.com/ishalumi/proxy-node-collector/main/output/nodes_base64.txt",
     "https://gist.githubusercontent.com/shuaidaoya/9e5cf2749c0ce79932dd9229d9b4162b/raw/base64.txt",
@@ -1078,6 +1078,42 @@ def prefilter_candidates(candidates: list) -> list:
     return passed + deferred
 
 
+def cred_fingerprint(outbound: dict, proto: str) -> str:
+    """全面精确提取节点凭据指纹（严格区分凭据、传输层、伪装域名与路径，杜绝同IP不同配置模糊冒充）"""
+    try:
+        tls = outbound.get("tls") or {}
+        trans = outbound.get("transport") or {}
+        trans_type = trans.get("type", "")
+        path = trans.get("path", "")
+        host = trans.get("headers", {}).get("Host", "") or trans.get("host", "")
+        sni = tls.get("server_name", "")
+
+        if proto == "vless":
+            flow = outbound.get("flow", "")
+            pbk = (tls.get("reality") or {}).get("public_key", "")
+            sid = (tls.get("reality") or {}).get("short_id", "")
+            return f"vless|{outbound.get('uuid','')}|{flow}|{trans_type}|{path}|{host}|{sni}|{pbk}|{sid}"
+        if proto == "vmess":
+            uid = outbound.get("uuid", "") or outbound.get("user_id", "")
+            alter = outbound.get("alter_id", 0)
+            return f"vmess|{uid}|{alter}|{trans_type}|{path}|{host}|{sni}"
+        if proto == "trojan":
+            pwd = outbound.get("password", "")
+            return f"trojan|{pwd}|{trans_type}|{path}|{sni}"
+        if proto == "shadowsocks":
+            return f"ss|{outbound.get('method','')}|{outbound.get('password','')}"
+        if proto == "hysteria2":
+            return f"hy2|{outbound.get('password','')}|{outbound.get('server_ports','')}|{sni}"
+        if proto == "tuic":
+            return f"tuic|{outbound.get('uuid','')}|{outbound.get('password','')}|{sni}"
+        if proto == "anytls":
+            return f"anytls|{outbound.get('password','')}|{sni}"
+        return json.dumps({k: v for k, v in outbound.items()
+                          if k in ("uuid", "password", "user_id", "method", "transport", "tls")}, sort_keys=True)
+    except Exception:
+        return ""
+
+
 # ═══════════════════════════════════════════N═══════════════════════
 # 阶段 B: sing-box 真实测活
 # ═══════════════════════════════════════════N═══════════════════════
@@ -1321,9 +1357,11 @@ def test_single_node(item, keep_alive_check=True):
 
         result = {
             "raw": raw,
+            "outbound": outbound,
             "server": server,
             "port": port,
             "proto": proto,
+            "cred_key": (server.lower() if server else "", port, proto, cred_fingerprint(outbound, proto)),
             "alive": True,
             "latency_ms": int(latency_ms),
             "exit_ip": exit_ip,
@@ -1732,11 +1770,8 @@ def outbound_to_clash(node: dict, name: str) -> dict:
         if tls.get("alpn"):
             proxy["alpn"] = tls["alpn"]
     elif t == "anytls":
-        proxy["type"] = "anytls"
-        proxy["password"] = node["password"]
-        tls = node.get("tls") or {}
-        proxy["sni"] = tls.get("server_name") or server
-        proxy["skip-cert-verify"] = bool(tls.get("insecure"))
+        # Clash / Mihomo 原生不支持 anytls 协议，避免产生非法配置
+        return None
     else:
         return None
     return proxy
@@ -2249,6 +2284,80 @@ def export_all(unique_nodes, residential, non_residential):
 
 def export_clash_yaml(clash_proxies, filepath):
     names = [p["name"] for p in clash_proxies]
+    if not names:
+        return
+
+    # 按特性与地区智能分类
+    res_names = [n for n in names if "(家宽)" in n]
+    hk_names = [n for n in names if "中国香港" in n or "Hong Kong" in n]
+    tw_names = [n for n in names if "中国台湾" in n or "Taiwan" in n]
+    jp_names = [n for n in names if "日本" in n or "Japan" in n]
+    sg_names = [n for n in names if "新加坡" in n or "Singapore" in n]
+    us_names = [n for n in names if "美国" in n or "United States" in n]
+    kr_names = [n for n in names if "韩国" in n or "South Korea" in n]
+
+    proxy_groups = []
+
+    # 1. 自动测速优选组
+    proxy_groups.append({
+        "name": "⚡ 自动优选",
+        "type": "url-test",
+        "url": "https://www.gstatic.com/generate_204",
+        "interval": 300,
+        "tolerance": 50,
+        "proxies": list(names),
+    })
+
+    # 2. 家宽专区分组 (若有家宽节点)
+    if res_names:
+        proxy_groups.append({
+            "name": "🏠 住宅家宽",
+            "type": "select",
+            "proxies": ["⚡ 家宽优选"] + res_names,
+        })
+        proxy_groups.append({
+            "name": "⚡ 家宽优选",
+            "type": "url-test",
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": 300,
+            "tolerance": 50,
+            "proxies": res_names,
+        })
+
+    # 3. 地区分组 (仅当节点总数较多且该地区节点不等于全部节点时自动生成地区子分组)
+    region_groups = []
+    for reg_name, reg_list in [
+        ("🇭🇰 香港节点", hk_names),
+        ("🇹🇼 台湾节点", tw_names),
+        ("🇯🇵 日本节点", jp_names),
+        ("🇸🇬 新加坡节点", sg_names),
+        ("🇺🇸 美国节点", us_names),
+        ("🇰🇷 韩国节点", kr_names),
+    ]:
+        if reg_list and len(reg_list) < len(names):
+            proxy_groups.append({
+                "name": reg_name,
+                "type": "url-test",
+                "url": "https://www.gstatic.com/generate_204",
+                "interval": 300,
+                "tolerance": 50,
+                "proxies": reg_list,
+            })
+            region_groups.append(reg_name)
+
+    # 4. 主选择组 (放在最顶层供客户端首选)
+    top_proxies = ["⚡ 自动优选"]
+    if res_names:
+        top_proxies.append("🏠 住宅家宽")
+    top_proxies.extend(region_groups)
+    top_proxies.extend(["DIRECT"] + names)
+
+    proxy_groups.insert(0, {
+        "name": "🚀 节点选择",
+        "type": "select",
+        "proxies": top_proxies,
+    })
+
     config = {
         "port": 7890,
         "socks-port": 7891,
@@ -2256,12 +2365,12 @@ def export_clash_yaml(clash_proxies, filepath):
         "mode": "rule",
         "log-level": "info",
         "proxies": clash_proxies,
-        "proxy-groups": [
-            {"name": "PROXIES", "type": "select", "proxies": ["AUTO"] + names},
-            {"name": "AUTO", "type": "url-test", "url": "https://www.gstatic.com/generate_204",
-             "interval": 300, "proxies": names},
+        "proxy-groups": proxy_groups,
+        "rules": [
+            "GEOIP,LAN,DIRECT",
+            "GEOIP,CN,DIRECT",
+            "MATCH,🚀 节点选择",
         ],
-        "rules": ["MATCH,PROXIES"],
     }
     with open(filepath, "w", encoding="utf-8") as f:
         yaml.dump(config, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
@@ -2467,32 +2576,9 @@ def main():
             continue
         candidates.append((uri, outbound, server, port, proto))
 
-    # 2.5 ★ 测前强去重 (凭据指纹去重: 同 凭据+目标+协议 只测一次, 结果回填全部重复节点)
+    # 2.5 ★ 测前强去重 (凭据指纹去重: 同 凭据+目标+协议 只测一次, 结果回填完全一致的重复节点)
     #     key = (server, port, proto, 凭据指纹): 凭据不同 → 服务端校验结果可能不同, 不可合并
-    #     凭据指纹: uuid/password 各协议的核心身份字段 (vless uuid / vmess id+alterId /
-    #               trojan password / ss 2022密钥 / hy2 auth / tuic uuid+passwd / anytls password)
-    #     完全相同 = 同一节点被多源重复收录 (免费池常态, 30+ 份不同名字) → 只测一次
-    def cred_fingerprint(outbound: dict, proto: str) -> str:
-        try:
-            if proto == "vless":
-                return f"{outbound.get('uuid','')}"
-            if proto == "vmess":
-                return f"{outbound.get('uuid','') or outbound.get('user_id','')}"
-            if proto == "trojan":
-                return f"{outbound.get('password','')}"
-            if proto == "shadowsocks":
-                return f"{outbound.get('method','')}|{outbound.get('password','')}"
-            if proto == "hysteria2":
-                return f"{outbound.get('password','') or ''}|{outbound.get('server_ports','')}"
-            if proto == "tuic":
-                return f"{outbound.get('uuid','')}|{outbound.get('password','')}"
-            if proto == "anytls":
-                return f"{outbound.get('password','')}"
-            return json.dumps({k: v for k, v in outbound.items()
-                              if k in ("uuid", "password", "user_id", "method")}, sort_keys=True)
-        except Exception:
-            return ""  # 指纹失败 → 不合并 (宁慢不错)
-
+    #     完全相同 = 同一节点被多源重复收录 (免费池常态, 仅名字不同) → 只测一次
     seen_keys, deduped, dup_count = {}, [], 0
     for item in candidates:
         uri, outbound, server, port, proto = item
@@ -2523,22 +2609,20 @@ def main():
     # 4. 真实测活 (只测去重后的代表节点)
     test_results = run_liveness_test(candidates)
 
-    # 4.5 ★ 重复节点结果回填: 同 凭据+目标 的重复 URI 继承测活结果 (凭据相同 → 服务端表现一致)
+    # 4.5 ★ 重复节点结果回填: 严格使用完整四元组 (同 目标+端口+协议+完整配置凭据) 继承测活结果
+    # 彻底杜绝三元组模糊匹配导致同 IP 不同配置的死节点被伪造回填
     if DEDUP_MAP:
         result_by_key = {}
         for r in test_results:
-            key = ((r["server"] or "").lower(), r["port"], r["proto"])
-            result_by_key[key] = r
+            if "cred_key" in r:
+                result_by_key[r["cred_key"]] = r
         expanded = list(test_results)
         backfilled = 0
-        # 反向索引: server:port:proto → 原始 fingerprint (从 DEDUP_MAP 的 key 直接继承)
         for key, uris in DEDUP_MAP.items():
             if len(uris) <= 1:
                 continue
-            # 用 key 的前三段 (server, port, proto) 找测活结果
-            lookup = (key[0], key[1], key[2])
-            r = result_by_key.get(lookup)
-            if not r or not r.get("alive"):
+            r = result_by_key.get(key)
+            if not r or not r.get("alive") or r.get("is_stalled"):
                 continue
             for extra_uri in uris[1:]:
                 clone = dict(r)
@@ -2546,7 +2630,7 @@ def main():
                 expanded.append(clone)
                 backfilled += 1
         if backfilled:
-            print(f"[+] 重复节点回填: +{backfilled} (继承代表测活结果)")
+            print(f"[+] 重复节点回填: +{backfilled} (严格按相同凭据指纹继承测活结果)")
         test_results = expanded
 
     # 5. ★ 家宽链式复测: 用最快存活节点做前置双跳复测家宽候选
