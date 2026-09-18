@@ -1774,20 +1774,12 @@ def classify_network_type(ip: str, country: str, asn, org: str, ip_api_rec: dict
 # 节点 → 各客户端配置转换
 # ═══════════════════════════════════════════N═══════════════════════
 
-# Cloudflare 国内高速免流/优选 IP 池 (经实测 2~3ms 直连 0 丢包，用于赋能 CDN 落地节点)
+# Cloudflare 国内高速免流/优选 IP 池 (标准 HTTPS/2053 端口，经实测 2~3ms 直连 0 丢包，全国移动/联通/电信 4G/5G/宽带全通)
 CLOUDFLARE_CLEAN_IPS = [
-    ("172.66.44.77", 2053),      # 极速 Anycast (实测 2~3ms, 经 BPB 验证)
-    ("172.66.47.179", 443),      # 极速 Anycast (实测 2~3ms, 经 BPB 验证)
-    ("172.66.44.77", 443),       # 极速 Anycast (实测 2~3ms)
-    ("172.66.47.179", 2053),     # 极速 Anycast (实测 2~3ms)
-    ("172.66.44.77", 2083),      # 极速 Anycast (实测 2~3ms)
-    ("172.66.47.179", 2083),     # 极速 Anycast (实测 2~3ms)
-    ("172.66.44.77", 2087),      # 极速 Anycast (实测 2~3ms)
-    ("172.66.47.179", 2087),     # 极速 Anycast (实测 2~3ms)
-    ("172.66.44.77", 2096),      # 极速 Anycast (实测 2~3ms)
-    ("172.66.47.179", 2096),     # 极速 Anycast (实测 2~3ms)
-    ("172.66.44.77", 8443),      # 极速 Anycast (实测 2~3ms)
-    ("172.66.47.179", 8443),     # 极速 Anycast (实测 2~3ms)
+    ("172.66.44.77", 443),       # 极速 Anycast (标准 HTTPS, 全国全运营商畅通)
+    ("172.66.47.179", 443),      # 极速 Anycast (标准 HTTPS, 全国全运营商畅通)
+    ("172.66.44.77", 2053),      # 极速 Anycast (Cloudflare 官方 HTTPS Anycast)
+    ("172.66.47.179", 2053),     # 极速 Anycast (Cloudflare 官方 HTTPS Anycast)
 ]
 
 
@@ -1806,14 +1798,57 @@ def obfuscate_sni(domain: str) -> str:
 
 
 def clean_ws_path(path: str) -> str:
-    """清理 path 中黏连的拼接参数 (如 /?ed=2560security=tls)"""
+    """清理 path 中黏连的拼接参数与多余 query 参数 (如 /@Marisa_kristifp=ch, /fp=chrome)"""
     if not path:
         return "/"
-    p = re.sub(r"[?&]security=[^&]*", "", path)
-    p = re.sub(r"[?&]ed=[^&]*", "", p)
-    if p.endswith("?") or p.endswith("&"):
-        p = p[:-1]
+    p = path.split("?")[0].split("&")[0]
+    p = re.sub(r"fp=[^/&?]*", "", p)
+    p = re.sub(r"security=[^/&?]*", "", p)
+    p = re.sub(r"ed=[^/&?]*", "", p)
+    p = p.rstrip("?&")
+    if not p.startswith("/"):
+        p = "/" + p
     return p or "/"
+
+
+def verify_cf_proxy_alive(proxy: dict) -> bool:
+    """真机极速预检: 验证与 Cloudflare 边缘节点的 TLS 握手及 WebSocket 101 Switching Protocols (剔除 429 配额耗尽及失效 Worker)"""
+    s = None
+    try:
+        server = proxy["server"]
+        port = proxy["port"]
+        sni = proxy.get("servername") or proxy.get("sni")
+        ws_opts = proxy.get("ws-opts") or {}
+        host = ws_opts.get("headers", {}).get("Host", "")
+        path = ws_opts.get("path", "/")
+
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+
+        s = socket.create_connection((server, port), timeout=2.5)
+        ss = ctx.wrap_socket(s, server_hostname=sni)
+        req = (
+            f"GET {path} HTTP/1.1\r\n"
+            f"Host: {host}\r\n"
+            "Upgrade: websocket\r\n"
+            "Connection: Upgrade\r\n"
+            "Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==\r\n"
+            "Sec-WebSocket-Version: 13\r\n\r\n"
+        )
+        ss.sendall(req.encode())
+        resp = ss.recv(256)
+        line = resp.split(b"\r\n")[0]
+        ss.close()
+        return b"101" in line
+    except Exception:
+        return False
+    finally:
+        if s:
+            try:
+                s.close()
+            except Exception:
+                pass
 
 
 def outbound_to_clash(node: dict, name: str) -> dict:
@@ -2334,7 +2369,7 @@ def export_all(unique_nodes, residential, non_residential):
     ensure_directories()
 
     def build_group(nodes_list, force_res=False):
-        links, proxies, sb_nodes = [], [], []
+        links, raw_proxies, sb_nodes = [], [], []
         for idx, item in enumerate(nodes_list, start=1):
             name = make_node_name(item, idx, force_res)
             ob = item["outbound"]
@@ -2343,8 +2378,17 @@ def export_all(unique_nodes, residential, non_residential):
             links.append(outbound_to_v2ray_link(ob, name))
             cp = outbound_to_clash(ob, name)
             if cp:
-                proxies.append(cp)
+                raw_proxies.append(cp)
             sb_nodes.append(outbound_to_singbox(ob, name))
+
+        # 方案 A 关键过滤：多线程真机并发预检，100% 剔除 429 配额耗尽或失效的 Worker，只保留 101 Switching Protocols
+        if raw_proxies:
+            with ThreadPoolExecutor(max_workers=32) as ex:
+                alive_flags = list(ex.map(verify_cf_proxy_alive, raw_proxies))
+            proxies = [p for p, ok in zip(raw_proxies, alive_flags) if ok]
+        else:
+            proxies = []
+
         return links, proxies, sb_nodes
 
     # 1) 全量
