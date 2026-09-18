@@ -1,0 +1,485 @@
+mixed-port: 7890
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+proxies:
+- name: 🇩🇪 德国 (Germany) 40 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiSFM1N0lLQmx2UU1qRzlnTiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
+    headers:
+      Host: 057.electrocellco-cf-057.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 20e295db-a6af-4006-bfd6-91453f169968
+  servername: 057.eLeCtRoCeLlCo-cF-057.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 68 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiTEwyZVI5T3BYZDBxTzhPRCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    headers:
+      Host: 6crihfknlqjdu3yuzco9phspq86dbp6q.christanmoccasin.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 7201b2cd-0675-4c1a-9c76-07ca14ffcf08
+  servername: 6CrIhFkNlQjDu3yUzCo9pHsPq86DbP6Q.ChRiStAnMoCcAsIn.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 73 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiTlZxbGYyajQiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119
+    headers:
+      Host: 6crihfknlqjdu3yuzco9phspq86dbp6q.christanmoccasin.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 7201b2cd-0675-4c1a-9c76-07ca14ffcf08
+  servername: 6CrIhFkNlQjDu3yUzCo9pHsPq86DbP6Q.ChRiStAnMoCcAsIn.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 97 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/Wp4FqWLcoYNYXCovu4
+    headers:
+      Host: api-hub-c9a393.alimirzai539-484.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 8f53fce2-6c17-4e37-9ae9-d969fd85117c
+  servername: aPi-hUb-c9a393.AlImIrZaI539-484.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 121 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: bold-term-4edd.mbigspot.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 0b3e7958-e5c4-498f-ab21-b49686f95d2d
+  servername: bOlD-TeRm-4EdD.MbIgSpOt.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 146 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/zXLTmz3hE3szn64f
+    headers:
+      Host: l0n0qgkdttu061g57fhqzbet333s4t.ade-1004.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: bd8c736e-cae1-43d7-b573-9672e6ca4989
+  servername: l0n0qGkDtTu061g57FhQzBeT333S4T.AdE-1004.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 179 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/nOBmhwrWYZ5IucFYa
+    headers:
+      Host: zhclj7kx6wq0le6w-onnwueonk1hftn4.imanbieng27.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: c07346da-5799-40c1-9d5a-5ea3ca3ac9e2
+  servername: zHcLj7kX6Wq0lE6W-OnNwUeOnK1HfTn4.ImAnBiEnG27.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 183 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/cxl8Wn1ylnsk63nJ0
+    headers:
+      Host: lhns3ww2-cxq-gj1vvobkepig4nopkc.hqu4v38hi9iftcp6mzfmx-3bmx.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 38d6b629-64c2-4c31-a10d-26eb3a2a053d
+  servername: lHnS3Ww2-CxQ-Gj1vVoBkEpIg4nOpKc.hQu4v38Hi9iFtCp6mZfMx-3BmX.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 188 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/Li1khIHH3DNItJyzraemsPBQvu
+    headers:
+      Host: wgrcqwtkfyqujs43.ghydgdbdbddvv.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 07821f66-cdb7-4c70-9de6-e230cffac470
+  servername: wGrCqWtKfYqUjS43.GhYdGdBdBdDvV.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 207 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/D2pryqVs9LAgCYdTK76lsafWY
+    headers:
+      Host: vkvd8bpskvxgjwdvcidxgoccr.javanbaghe.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 923e051a-f598-4ea5-9c6c-f7e37c438a60
+  servername: vKvD8BpSkVxGjWdVcIdXgOcCr.jAvAnBaGhE.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 221 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/0YYsEN0i1mU1x8N0W
+    headers:
+      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
+  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
+- name: 🇩🇪 德国 (Germany) 228 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiSFM1N0lLQmx2UU1qRzlnTiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    headers:
+      Host: 057.electrocellco-cf-057.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 20e295db-a6af-4006-bfd6-91453f169968
+  servername: 057.eLeCtRoCeLlCo-cF-057.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 250 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/cxl8Wn1ylnsk63nJ0
+    headers:
+      Host: lhns3ww2-cxq-gj1vvobkepig4nopkc.hqu4v38hi9iftcp6mzfmx-3bmx.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 38d6b629-64c2-4c31-a10d-26eb3a2a053d
+  servername: lHnS3Ww2-CxQ-Gj1vVoBkEpIg4nOpKc.hQu4v38Hi9iFtCp6mZfMx-3BmX.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 251 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /pRXE5ot0RZaQSr7B
+    headers:
+      Host: stf839dvvyog9d2qa4-b8z6ahgn7b7qi.pages.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: b2f2f9f2-1864-48ea-839b-22815faff1f1
+  servername: sTf839dVvYoG9D2Qa4-B8Z6AhGn7b7qI.paGEs.DeV
+- name: 🇩🇪 德国 (Germany) 256 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/VKec4m2dLHFngRv9xsOhnj9ZLjotNh
+    headers:
+      Host: netra-85a0ca.shoameni19.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 20836693-ea23-4f40-a1e7-48a6da897917
+  servername: nEtRa-85a0cA.ShOaMeNi19.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 271 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiVzg3NkFVRjZaUCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
+    headers:
+      Host: snowy-glade-85fa.arshiatakalloo88.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: a43a9a45-7387-4faf-ad06-24b1ae181fdc
+  servername: sNoWy-gLaDe-85fA.ArShIaTaKaLlOo88.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 277 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/hEL3xuH49KrqLdrJJq3SL3eD43xr
+    headers:
+      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
+  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
+- name: 🇩🇪 德国 (Germany) 280 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoicVkwaG9XUUQyUDhzRkZ5UiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    headers:
+      Host: restless-moon-dd68ridam-too-in-mamlekat.hgtghff67tdfhut3.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: dc1e9f00-c064-4870-9bfc-463db50257d7
+  servername: rEsTlEsS-MoOn-dD68rIdAm-tOo-iN-MaMlEkAt.hGtGhFf67TdFhUt3.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 281 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /9BozNyvQ8VdRvsYX
+    headers:
+      Host: stf839dvvyog9d2qa4-b8z6ahgn7b7qi.pages.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: b2f2f9f2-1864-48ea-839b-22815faff1f1
+  servername: sTf839dVvYoG9D2Qa4-B8Z6AhGn7b7qI.paGEs.DeV
+- name: 🇩🇪 德国 (Germany) 289 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/3Qe9Fv1V2cqEtXyBQApZYi
+    headers:
+      Host: akbarian34.j9z65ce2uyks.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: b19419fa-8009-455b-b059-765e2856883a
+  servername: aKbArIaN34.J9Z65cE2UyKs.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 300 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/3Qe9Fv1V2cqEtXyBQApZYi
+    headers:
+      Host: akbarian34.j9z65ce2uyks.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: b19419fa-8009-455b-b059-765e2856883a
+  servername: aKbArIaN34.J9Z65cE2UyKs.woRkErs.dEv
+- name: 🇩🇪 德国 (Germany) 348 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /sd5fvgnaejylipcc
+    headers:
+      Host: d2127a49-flat-wood-c4b5.milia-akbarpoor.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 0836463b-214f-4af6-aa85-85a56a62388e
+  servername: d2127A49-FlAt-wOoD-C4B5.mIlIa-aKbArPoOr.woRkErs.dEv
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - ⚡ 自动优选
+  - DIRECT
+  - 🇩🇪 德国 (Germany) 40 - xiaohe
+  - 🇩🇪 德国 (Germany) 68 - xiaohe
+  - 🇩🇪 德国 (Germany) 73 - xiaohe
+  - 🇩🇪 德国 (Germany) 97 - xiaohe
+  - 🇩🇪 德国 (Germany) 121 - xiaohe
+  - 🇩🇪 德国 (Germany) 146 - xiaohe
+  - 🇩🇪 德国 (Germany) 179 - xiaohe
+  - 🇩🇪 德国 (Germany) 183 - xiaohe
+  - 🇩🇪 德国 (Germany) 188 - xiaohe
+  - 🇩🇪 德国 (Germany) 207 - xiaohe
+  - 🇩🇪 德国 (Germany) 221 - xiaohe
+  - 🇩🇪 德国 (Germany) 228 - xiaohe
+  - 🇩🇪 德国 (Germany) 250 - xiaohe
+  - 🇩🇪 德国 (Germany) 251 - xiaohe
+  - 🇩🇪 德国 (Germany) 256 - xiaohe
+  - 🇩🇪 德国 (Germany) 271 - xiaohe
+  - 🇩🇪 德国 (Germany) 277 - xiaohe
+  - 🇩🇪 德国 (Germany) 280 - xiaohe
+  - 🇩🇪 德国 (Germany) 281 - xiaohe
+  - 🇩🇪 德国 (Germany) 289 - xiaohe
+  - 🇩🇪 德国 (Germany) 300 - xiaohe
+  - 🇩🇪 德国 (Germany) 348 - xiaohe
+- name: ⚡ 自动优选
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 🇩🇪 德国 (Germany) 40 - xiaohe
+  - 🇩🇪 德国 (Germany) 68 - xiaohe
+  - 🇩🇪 德国 (Germany) 73 - xiaohe
+  - 🇩🇪 德国 (Germany) 97 - xiaohe
+  - 🇩🇪 德国 (Germany) 121 - xiaohe
+  - 🇩🇪 德国 (Germany) 146 - xiaohe
+  - 🇩🇪 德国 (Germany) 179 - xiaohe
+  - 🇩🇪 德国 (Germany) 183 - xiaohe
+  - 🇩🇪 德国 (Germany) 188 - xiaohe
+  - 🇩🇪 德国 (Germany) 207 - xiaohe
+  - 🇩🇪 德国 (Germany) 221 - xiaohe
+  - 🇩🇪 德国 (Germany) 228 - xiaohe
+  - 🇩🇪 德国 (Germany) 250 - xiaohe
+  - 🇩🇪 德国 (Germany) 251 - xiaohe
+  - 🇩🇪 德国 (Germany) 256 - xiaohe
+  - 🇩🇪 德国 (Germany) 271 - xiaohe
+  - 🇩🇪 德国 (Germany) 277 - xiaohe
+  - 🇩🇪 德国 (Germany) 280 - xiaohe
+  - 🇩🇪 德国 (Germany) 281 - xiaohe
+  - 🇩🇪 德国 (Germany) 289 - xiaohe
+  - 🇩🇪 德国 (Germany) 300 - xiaohe
+  - 🇩🇪 德国 (Germany) 348 - xiaohe
+rules:
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择

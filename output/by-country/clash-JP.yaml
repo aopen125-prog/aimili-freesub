@@ -1,0 +1,44 @@
+mixed-port: 7890
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+proxies:
+- name: 🇯🇵 日本 (Japan) 510 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 5iv93opy8jus9z.bjo5si35c9i9ud4242fado49188obkoiermjuxj7zgxu.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 281be80c-6034-4db1-b456-5a5307c6edee
+  servername: 5Iv93OpY8JuS9Z.BjO5Si35C9I9Ud4242FaDo49188oBkOiErMjUxJ7ZgXu.woRkErs.dEv
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - ⚡ 自动优选
+  - DIRECT
+  - 🇯🇵 日本 (Japan) 510 - xiaohe
+- name: ⚡ 自动优选
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 🇯🇵 日本 (Japan) 510 - xiaohe
+rules:
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择

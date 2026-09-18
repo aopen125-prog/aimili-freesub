@@ -2369,7 +2369,7 @@ def export_all(unique_nodes, residential, non_residential):
     ensure_directories()
 
     def build_group(nodes_list, force_res=False):
-        links, raw_proxies, sb_nodes = [], [], []
+        links, proxies, sb_nodes = [], [], []
         for idx, item in enumerate(nodes_list, start=1):
             name = make_node_name(item, idx, force_res)
             ob = item["outbound"]
@@ -2378,17 +2378,8 @@ def export_all(unique_nodes, residential, non_residential):
             links.append(outbound_to_v2ray_link(ob, name))
             cp = outbound_to_clash(ob, name)
             if cp:
-                raw_proxies.append(cp)
+                proxies.append(cp)
             sb_nodes.append(outbound_to_singbox(ob, name))
-
-        # 方案 A 关键过滤：多线程真机并发预检，100% 剔除 429 配额耗尽或失效的 Worker，只保留 101 Switching Protocols
-        if raw_proxies:
-            with ThreadPoolExecutor(max_workers=32) as ex:
-                alive_flags = list(ex.map(verify_cf_proxy_alive, raw_proxies))
-            proxies = [p for p, ok in zip(raw_proxies, alive_flags) if ok]
-        else:
-            proxies = []
-
         return links, proxies, sb_nodes
 
     # 1) 全量
