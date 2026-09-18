@@ -57,8 +57,7 @@ SOURCE_URLS = [
     "https://open.heleimail.workers.dev/",
     "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
     "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/v2ray-base64-TW.txt",
-    "https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/all_extracted_configs.txt",
-    "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/splitted/mixed",
+    "https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/V2Ray-Config-By-EbraSha.txt",
     "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
     "https://raw.githubusercontent.com/freefq/free/master/v2",
     "https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/all.txt",
@@ -1060,22 +1059,45 @@ def knock_port(server: str, port: int, protocol_type: str) -> bool:
 
 
 def prefilter_candidates(candidates: list) -> list:
-    """端口预检: 通过者优先, 未通过者降级保留 (防止本地网络/GFW 视角误杀;
-    真正生死由阶段B sing-box 全流程测活裁决 — Actions 海外视角)"""
+    """端口预检: 快速剔除无法连接与关闭的死端口，防止死节点耗尽 GitHub Actions 运行时间上限"""
     print(f"[*] 端口预检 (TCP {PORT_KNOCK_TIMEOUT}s): {len(candidates)} 候选 ...")
-    passed, deferred = [], []
+    passed = []
 
     def _knock(item):
         raw, outbound, server, port, proto = item
         return knock_port(server, port, proto)
 
     with ThreadPoolExecutor(max_workers=64) as ex:
-        # ex.map 保序返回; 通过者优先, 未通过降级保留 (不淘汰, 防本地视角误杀)
         for item, ok in zip(candidates, ex.map(_knock, candidates)):
-            (passed if ok else deferred).append(item)
-    print(f"[+] 预检通过: {len(passed)} | 预检未过(保留低优先级待全测): {len(deferred)}")
-    # 预检未过的仍进入全流程 (只是排在后面) — 交给 sing-box 真实裁决
-    return passed + deferred
+            if ok:
+                passed.append(item)
+
+    print(f"[+] 预检通过 (端口通畅): {len(passed)} | 预检淘汰 (端口关闭/超时): {len(candidates) - len(passed)}")
+
+    # 优先保证家宽、高抗封锁协议（Reality, Hysteria2, TUIC, VMESS-WS），并设置最大测试数量保护以防 CI 超时
+    MAX_PROBE_CANDIDATES = 4000
+    if len(passed) > MAX_PROBE_CANDIDATES:
+        def _score(item):
+            raw, outbound, server, port, proto = item
+            score = 0
+            s_lower = (server or "").lower()
+            r_lower = raw.lower()
+            for kw in ("broadband", "dsl", "cable", "fiber", "hinet", "chunghwa", "so-net", "home", "residential"):
+                if kw in s_lower or kw in r_lower:
+                    score += 50
+            if proto in ("hysteria2", "tuic"):
+                score += 30
+            elif proto == "vless":
+                score += 20
+            elif proto == "vmess":
+                score += 10
+            return score
+
+        passed.sort(key=_score, reverse=True)
+        print(f"[*] 候选节点超出安全阈值，优选前 {MAX_PROBE_CANDIDATES} 个高品质候选进入内核测活...")
+        passed = passed[:MAX_PROBE_CANDIDATES]
+
+    return passed
 
 
 def cred_fingerprint(outbound: dict, proto: str) -> str:
