@@ -53,6 +53,7 @@ except ImportError as e:
 # ══════════════════════════════════════════════════════════════════
 
 SOURCE_URLS = [
+    "https://xaz7ydgqrdkfprd-9vnt.pages.dev/XdyHVu1nYYbGLd5L/sub/normal?app=clash",
     "https://wild-cloud-9893.heleimail.workers.dev",
     "https://open.heleimail.workers.dev/",
     "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
@@ -401,7 +402,8 @@ PROBE_SESSION.headers.update({"User-Agent": USER_AGENT})
 
 
 def http_get(url: str, timeout: int = 15, headers: dict = None) -> requests.Response:
-    h = {"User-Agent": USER_AGENT, "Accept": "*/*"}
+    ua = "ClashVerge/1.6.0, " + USER_AGENT if ("app=clash" in url or "clash" in url.lower()) else USER_AGENT
+    h = {"User-Agent": ua, "Accept": "*/*"}
     if headers:
         h.update(headers)
     return DIRECT_SESSION.get(url, timeout=timeout, headers=h)
@@ -950,11 +952,97 @@ def parse_node_uri(uri: str):
     return None
 
 
+def clash_proxy_to_uri(p: dict) -> str:
+    """将 Clash proxy 字典转换为标准协议 URI (支持 vless, trojan, vmess, ss)"""
+    try:
+        ptype = p.get("type")
+        name = urllib.parse.quote(p.get("name", ""))
+        server = p.get("server")
+        port = p.get("port")
+        if not server or not port:
+            return None
+        if ptype == "vless":
+            uuid = p.get("uuid")
+            security = "reality" if p.get("reality-opts") else ("tls" if p.get("tls") else "none")
+            sni = p.get("servername") or p.get("sni") or ""
+            net = p.get("network", "tcp")
+            ws_opts = p.get("ws-opts") or {}
+            path = ws_opts.get("path", "")
+            host = ws_opts.get("headers", {}).get("Host", "")
+            params = [f"security={security}"]
+            if sni:
+                params.append(f"sni={sni}")
+            if net != "tcp":
+                params.append(f"type={net}")
+            if path:
+                params.append(f"path={urllib.parse.quote(path)}")
+            if host:
+                params.append(f"host={urllib.parse.quote(host)}")
+            flow_val = p.get("flow")
+            if flow_val:
+                params.append(f"flow={flow_val}")
+            return f"vless://{uuid}@{server}:{port}?" + "&".join(params) + f"#{name}"
+        elif ptype == "trojan":
+            pwd = p.get("password")
+            sni = p.get("sni") or p.get("servername") or ""
+            net = p.get("network", "tcp")
+            ws_opts = p.get("ws-opts") or {}
+            path = ws_opts.get("path", "")
+            host = ws_opts.get("headers", {}).get("Host", "")
+            params = ["security=tls"]
+            if sni:
+                params.append(f"sni={sni}")
+            if net != "tcp":
+                params.append(f"type={net}")
+            if path:
+                params.append(f"path={urllib.parse.quote(path)}")
+            if host:
+                params.append(f"host={urllib.parse.quote(host)}")
+            return f"trojan://{pwd}@{server}:{port}?" + "&".join(params) + f"#{name}"
+        elif ptype == "vmess":
+            uuid = p.get("uuid")
+            ws_opts = p.get("ws-opts") or {}
+            v_dict = {
+                "v": "2", "ps": p.get("name", ""), "add": server, "port": str(port),
+                "id": uuid, "aid": str(p.get("alterId", 0)),
+                "scy": p.get("cipher", "auto"),
+                "net": p.get("network", "tcp"),
+                "type": "none",
+                "host": ws_opts.get("headers", {}).get("Host", ""),
+                "path": ws_opts.get("path", ""),
+                "tls": "tls" if p.get("tls") else "",
+                "sni": p.get("servername") or p.get("sni") or "",
+            }
+            return "vmess://" + base64.b64encode(json.dumps(v_dict).encode()).decode()
+    except Exception:
+        pass
+    return None
+
+
 def extract_nodes_from_text(text: str) -> set:
     results = set()
     if not text:
         return results
     probe = text.strip()
+
+    # 0) 尝试解析 Clash 格式 (JSON 或 YAML)
+    if "proxies:" in probe or '"proxies":' in probe:
+        clash_data = None
+        try:
+            clash_data = json.loads(probe)
+        except Exception:
+            try:
+                clash_data = yaml.safe_load(probe)
+            except Exception:
+                pass
+        if isinstance(clash_data, dict) and "proxies" in clash_data:
+            for p in clash_data["proxies"]:
+                u = clash_proxy_to_uri(p)
+                if u:
+                    results.add(u)
+            if results:
+                return results
+
     # 最多三层 base64 解包 (订阅常见整体 base64)
     for _ in range(3):
         if any(p in probe for p in ("vmess://", "vless://", "ss://", "trojan://",
@@ -1042,11 +1130,11 @@ def resolve_host(host: str) -> str:
 
 
 def knock_port(server: str, port: int, protocol_type: str) -> bool:
-    """TCP 直连预检 (DoH 解析防本地 DNS 污染); QUIC 类直接放行阶段B
-    注: 预检失败不淘汰 (本地大陆视角的假死 ≠ 节点死亡), 只影响排序;
-        生死由阶段B sing-box 全流程测活裁决 (Actions 海外视角)"""
+    """TCP 直连预检 (DoH 解析防本地 DNS 污染); QUIC 类与 Cloudflare 域名直接放行阶段B"""
     if protocol_type in ("hysteria2", "tuic"):
-        # QUIC 无法轻量预检 UDP 端口连通性, 且本地 UDP 常被 QoS → 放行交阶段B
+        return True
+    s_low = (server or "").lower()
+    if ".pages.dev" in s_low or ".workers.dev" in s_low:
         return True
     try:
         ip = resolve_host(server)
@@ -1686,6 +1774,44 @@ def classify_network_type(ip: str, country: str, asn, org: str, ip_api_rec: dict
 # 节点 → 各客户端配置转换
 # ═══════════════════════════════════════════N═══════════════════════
 
+# Cloudflare 国内高速免流/优选 IP 与域名池 (实测直连 0 丢包，用于赋能 CDN 落地节点)
+CLOUDFLARE_CLEAN_IPS = [
+    ("172.66.44.77", 2053),
+    ("172.66.47.179", 443),
+    ("104.16.24.1", 443),
+    ("104.18.2.1", 443),
+    ("104.19.24.1", 443),
+    ("www.speedtest.net", 443),
+    ("162.159.192.1", 443),
+    ("172.67.180.1", 443),
+]
+
+
+def obfuscate_sni(domain: str) -> str:
+    """对 pages.dev / workers.dev 应用大小写交替混淆，绕过 GFW 域名关键词阻断库"""
+    if not domain:
+        return domain
+    d_lower = domain.lower()
+    if d_lower.endswith(".pages.dev") or d_lower.endswith(".workers.dev"):
+        chars = [c.upper() if (i % 2 == 1 and c.isalpha()) else c.lower() for i, c in enumerate(domain)]
+        res = "".join(chars)
+        res = re.sub(r"(?i)\.pages\.dev$", ".paGEs.DeV", res)
+        res = re.sub(r"(?i)\.workers\.dev$", ".woRkErs.dEv", res)
+        return res
+    return domain
+
+
+def clean_ws_path(path: str) -> str:
+    """清理 path 中黏连的拼接参数 (如 /?ed=2560security=tls)"""
+    if not path:
+        return "/"
+    p = re.sub(r"[?&]security=[^&]*", "", path)
+    p = re.sub(r"[?&]ed=[^&]*", "", p)
+    if p.endswith("?") or p.endswith("&"):
+        p = p[:-1]
+    return p or "/"
+
+
 def outbound_to_clash(node: dict, name: str) -> dict:
     """sing-box outbound → Clash (Meta/mihomo) proxy dict"""
     t = node.get("type")
@@ -1729,6 +1855,45 @@ def outbound_to_clash(node: dict, name: str) -> dict:
                 proxy["network"] = "httpupgrade"
                 proxy["httpupgrade-opts"] = {"path": transport.get("path", "/"),
                                               "headers": {"Host": transport.get("host", "")}}
+
+        # ★ 检查是否属于 Cloudflare 托管生态 (Workers/Pages 或使用 Cloudflare 伪装)
+        is_cf = False
+        cf_host = ""
+        for cand in (
+            proxy.get("servername", ""),
+            (proxy.get("ws-opts") or {}).get("headers", {}).get("Host", ""),
+            server,
+        ):
+            c_low = (cand or "").lower()
+            if ".pages.dev" in c_low or ".workers.dev" in c_low:
+                is_cf = True
+                cf_host = cand
+                break
+
+        if is_cf:
+            # 1. 强制启用 TLS 加密
+            proxy["tls"] = True
+            # 2. 对 SNI 应用大小写交替混淆，绕过 GFW 域名关键词阻断
+            target_sni = proxy.get("servername") or cf_host
+            proxy["servername"] = obfuscate_sni(target_sni)
+            # 3. 规范化 WebSocket 参数并启用 0-RTT early data
+            if "ws-opts" in proxy:
+                proxy["ws-opts"]["path"] = clean_ws_path(proxy["ws-opts"].get("path", "/"))
+                proxy["ws-opts"]["max-early-data"] = 2560
+                proxy["ws-opts"]["early-data-header-name"] = "Sec-WebSocket-Protocol"
+                if "headers" not in proxy["ws-opts"]:
+                    proxy["ws-opts"]["headers"] = {}
+                if "Host" not in proxy["ws-opts"]["headers"] or not proxy["ws-opts"]["headers"]["Host"]:
+                    proxy["ws-opts"]["headers"]["Host"] = cf_host
+            # 4. 自动注入国内畅通的优选 IP 替代随机境外死 IP
+            clean_ip, clean_port = CLOUDFLARE_CLEAN_IPS[abs(hash(name)) % len(CLOUDFLARE_CLEAN_IPS)]
+            proxy["server"] = clean_ip
+            proxy["port"] = clean_port
+        else:
+            # 非 Cloudflare 节点：严禁明文 HTTP (未启用 TLS/Reality 必被 GFW TCP RST 掐断)
+            if not proxy.get("tls") and not proxy.get("reality-opts"):
+                return None
+
     elif t == "vmess":
         proxy["type"] = "vmess"
         proxy["uuid"] = node["uuid"]
@@ -1752,6 +1917,10 @@ def outbound_to_clash(node: dict, name: str) -> dict:
                 proxy["network"] = "h2"
                 proxy["h2-opts"] = {"host": transport.get("host", []),
                                     "path": transport.get("path", "/")}
+        # 严禁明文 HTTP VMess
+        if not proxy.get("tls"):
+            return None
+
     elif t == "trojan":
         proxy["type"] = "trojan"
         proxy["password"] = node["password"]
@@ -1763,8 +1932,39 @@ def outbound_to_clash(node: dict, name: str) -> dict:
             proxy["network"] = transport["type"]
             if transport["type"] == "ws":
                 proxy["ws-opts"] = {"path": transport.get("path", "/")}
+                if transport.get("headers"):
+                    proxy["ws-opts"]["headers"] = transport["headers"]
             elif transport["type"] == "grpc":
                 proxy["grpc-opts"] = {"grpc-service-name": transport.get("service_name", "")}
+
+        # 检查是否属于 Cloudflare 托管节点
+        is_cf = False
+        cf_host = ""
+        for cand in (
+            proxy.get("sni", ""),
+            (proxy.get("ws-opts") or {}).get("headers", {}).get("Host", ""),
+            server,
+        ):
+            c_low = (cand or "").lower()
+            if ".pages.dev" in c_low or ".workers.dev" in c_low:
+                is_cf = True
+                cf_host = cand
+                break
+        if is_cf:
+            proxy["tls"] = True
+            target_sni = proxy.get("sni") or cf_host
+            proxy["sni"] = obfuscate_sni(target_sni)
+            if "ws-opts" in proxy:
+                proxy["ws-opts"]["path"] = clean_ws_path(proxy["ws-opts"].get("path", "/"))
+                proxy["ws-opts"]["max-early-data"] = 2560
+                proxy["ws-opts"]["early-data-header-name"] = "Sec-WebSocket-Protocol"
+                if "headers" not in proxy["ws-opts"]:
+                    proxy["ws-opts"]["headers"] = {}
+                if "Host" not in proxy["ws-opts"]["headers"] or not proxy["ws-opts"]["headers"]["Host"]:
+                    proxy["ws-opts"]["headers"]["Host"] = cf_host
+            clean_ip, clean_port = CLOUDFLARE_CLEAN_IPS[abs(hash(name)) % len(CLOUDFLARE_CLEAN_IPS)]
+            proxy["server"] = clean_ip
+            proxy["port"] = clean_port
     elif t == "shadowsocks":
         proxy["type"] = "ss"
         proxy["cipher"] = node["method"]
