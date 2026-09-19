@@ -5,7 +5,26 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇵🇱 波兰 (Poland) 309 - xiaohe
+- name: 🇺🇿 乌兹别克斯坦 (Uzbekistan) 02 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /stream/PANEL_ZEUS/4017ea8bea78/loc-4
+    headers:
+      Host: zeus-panel-mvtum1.mahdiharchegani.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 50414e45-4c5f-5a45-5553-4017ea8bea78
+  servername: zEuS-PaNeL-MvTuM1.mAhDiHaRcHeGaNi.woRkErs.dEv
+- name: 🇺🇿 乌兹别克斯坦 (Uzbekistan) 03 - xiaohe
   server: 172.66.47.179
   port: 443
   udp: true
@@ -16,49 +35,30 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /sync
+    path: '/stream/PANEL_ZEUS/4eef5adc237a/loc-1 '
     headers:
-      Host: khoda.ak-khoda.workers.dev
+      Host: r5zenrelur2s.pqzdileiu8es.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: e6cc4788-3c45-4df1-94f3-8303504a65bf
-  servername: kHoDa.aK-KhOdA.woRkErs.dEv
-- name: 🇵🇱 波兰 (Poland) 314 - xiaohe
-  server: 172.66.47.179
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /sync
-    headers:
-      Host: khoda.ak-khoda.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: e6cc4788-3c45-4df1-94f3-8303504a65bf
-  servername: kHoDa.aK-KhOdA.woRkErs.dEv
+  uuid: 50414e45-4c5f-5a45-5553-4eef5adc237a
+  servername: r5zEnReLuR2S.PqZdIlEiU8Es.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇵🇱 波兰 (Poland) 309 - xiaohe
-  - 🇵🇱 波兰 (Poland) 314 - xiaohe
+  - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 02 - xiaohe
+  - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 03 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇵🇱 波兰 (Poland) 309 - xiaohe
-  - 🇵🇱 波兰 (Poland) 314 - xiaohe
+  - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 02 - xiaohe
+  - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 03 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

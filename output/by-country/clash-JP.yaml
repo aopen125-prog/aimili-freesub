@@ -5,8 +5,160 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇯🇵 日本 (Japan) 510 - xiaohe
+- name: 🇯🇵 日本 (Japan) 01 - xiaohe
   server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime09.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: vMs.lIfEtImE09.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 02 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 8fd85405-c28b-42ce-87a8-646cbe38ced4
+  servername: bApJ1QaPjK4.0SdS0Li1bWcZ0I76iT0GjXv1.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 03 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 79aa80da-2394-4b0a-986b-15dad2382046
+  servername: o-85lEy6kNn8uT.6nVkYgQh144t7xTdYvH0Y3O4GzO3UjHnK8N.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 04 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 495c9e67-3a14-46a1-a1b7-aebe23cdff6e
+  servername: d-l28T5-65-B.PbE40wMcUjAw726h7cPqErNzMaWz4sTwTrNqVe0n1s5rEhT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 05 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: e09dd424-6706-43eb-8901-f8e07d3aec0c
+  servername: sXyYvIhKeKtLx4rJxSdJ.PkC73pHpWeU4RbXbAtM444.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 06 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 09dfe01f-db37-4de2-82e3-bc6692192512
+  servername: sXyYvIhKeKtLx4rJxSdJ.PkC73pHpWeU4RbXbAtM444.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 07 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 5iv93opy8jus9z.bjo5si35c9i9ud4242fado49188obkoiermjuxj7zgxu.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: c7ba4965-c763-43a6-9aad-b4fb1f7303f6
+  servername: 5Iv93OpY8JuS9Z.BjO5Si35C9I9Ud4242FaDo49188oBkOiErMjUxJ7ZgXu.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 08 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 7e899f17-ea29-4f11-a7b8-6c5739870d1b
+  servername: rUu2rX-OyCdRnSrZc.9UoKoLpK04vMg2eCqB8OyS7.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 09 - xiaohe
+  server: 172.66.47.179
   port: 2053
   udp: true
   tls: true
@@ -22,22 +174,977 @@ proxies:
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 281be80c-6034-4db1-b456-5a5307c6edee
+  uuid: 6badcd2f-26e5-4eb4-9169-86052115058a
   servername: 5Iv93OpY8JuS9Z.BjO5Si35C9I9Ud4242FaDo49188oBkOiErMjUxJ7ZgXu.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 10 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 196b7228-58df-4bcf-af2a-2e96608d5add
+  servername: 2-gYs60WmZb6bQzD.QpSjN114Hh3vLpH9Z60sEsZ0AgJaWpWrOnEg.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 11 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: '/@Marisa_kristi '
+    headers:
+      Host: 2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 65f26a08-9a5e-4b28-9004-f98676cc1e49
+  servername: 2-gYs60WmZb6bQzD.QpSjN114Hh3vLpH9Z60sEsZ0AgJaWpWrOnEg.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 12 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 19d767db-da16-4263-87ec-fd6cacf69ba7
+  servername: kQjIfHg9rW.TrAdSc8p9xP7WxYqMc1wY0Ah.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 13 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 9bb71136-2380-4b6a-97be-1d4ba11d5a55
+  servername: 9-7U3B6E.WzKiJa0v0dU4YhK6JfYfAfMl3nH22kNe.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 16 (家宽) - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: '/@Marisa_kristi+ '
+    headers:
+      Host: 2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 65f26a08-9a5e-4b28-9004-f98676cc1e49
+  servername: 2-gYs60WmZb6bQzD.QpSjN114Hh3vLpH9Z60sEsZ0AgJaWpWrOnEg.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 18 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: c8b0617e-010f-43a8-b3d0-d5358febf0c9
+  servername: kE859Ch2gSe1iErY3HiZ.E3Q4A5MjLd11KpJ0Zj8dQ.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 19 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 4c6609bf-8457-4260-b4fa-321379e57a4e
+  servername: 3T1YvByLa-rJ740G.28M7R63dTtYa6gAzMhOo.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 20 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 3fecd61b-bc7b-4f43-bdca-cf0fa7fae3a5
+  servername: mW5QiSaV.WjWqViE0Wb1eQhB8E83cLqDoQ3M5P9A4On.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 21 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: c5a761f7-d009-499f-952c-e256bf3fa829
+  servername: jLn31QtSwDkUt5.60KoHcOgNyWyBgUuQ3OuC818OoFnXfVn35DaOtT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 23 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: f9819b5b-3231-4b04-b1ca-f1134b25a212
+  servername: mW5QiSaV.WjWqViE0Wb1eQhB8E83cLqDoQ3M5P9A4On.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 24 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: c2c94230-7075-4558-89f4-ddf74d7de107
+  servername: jLn31QtSwDkUt5.60KoHcOgNyWyBgUuQ3OuC818OoFnXfVn35DaOtT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 25 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: c6dbx99g6stb418qeo.t3jmlj0r152zji4htdkm9.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 59c3c1c7-62d0-4707-9d67-5ff9c008591c
+  servername: c6dBx99G6StB418QeO.T3JmLj0r152zJi4hTdKm9.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 26 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 7d4f5f0d-293f-4612-98d6-01fa0c1954b4
+  servername: o-85lEy6kNn8uT.6nVkYgQh144t7xTdYvH0Y3O4GzO3UjHnK8N.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 29 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 4e2efa26-2969-486b-ae60-390ba54af31b
+  servername: o-85lEy6kNn8uT.6nVkYgQh144t7xTdYvH0Y3O4GzO3UjHnK8N.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 31 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 3e438472-0f1e-4bbf-be5a-67d034afd8c0
+  servername: kE859Ch2gSe1iErY3HiZ.E3Q4A5MjLd11KpJ0Zj8dQ.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 37 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 04d2aebd-246f-4348-805f-a8e6840365fc
+  servername: 2-gYs60WmZb6bQzD.QpSjN114Hh3vLpH9Z60sEsZ0AgJaWpWrOnEg.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 38 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: da46ec1f-84ad-4470-866f-010b58357b19
+  servername: 9-7U3B6E.WzKiJa0v0dU4YhK6JfYfAfMl3nH22kNe.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 39 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: a351220c-f8dc-4c52-8a2d-f4470f886a53
+  servername: sXyYvIhKeKtLx4rJxSdJ.PkC73pHpWeU4RbXbAtM444.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 40 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: cbdbf318-e010-4fb9-941f-6da4beab70e3
+  servername: d-l28T5-65-B.PbE40wMcUjAw726h7cPqErNzMaWz4sTwTrNqVe0n1s5rEhT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 41 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 587fe27b-aced-4cbf-8283-ad4647f01a8c
+  servername: 9-7U3B6E.WzKiJa0v0dU4YhK6JfYfAfMl3nH22kNe.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 47 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 9dbc54c6-aad1-4b30-8c4d-8abe0c0ea826
+  servername: sXyYvIhKeKtLx4rJxSdJ.PkC73pHpWeU4RbXbAtM444.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 48 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: edd66a4b-8f3c-406c-9f17-a5b123a9006b
+  servername: 2-gYs60WmZb6bQzD.QpSjN114Hh3vLpH9Z60sEsZ0AgJaWpWrOnEg.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 49 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: d3fca73d-7967-46c6-ab35-fb86d3c8f293
+  servername: mW5QiSaV.WjWqViE0Wb1eQhB8E83cLqDoQ3M5P9A4On.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 50 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: d4c6b1ad-9ec4-4273-854a-f0bbf0448ab6
+  servername: wOc0zVrF11w2eNdU.DpHdLc1u77Bs3y4kVuSsBuAp4p576f1wS7IgThQ8ZbF3.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 51 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 1bcf3083-7954-42f8-b59b-400e155beec9
+  servername: d-l28T5-65-B.PbE40wMcUjAw726h7cPqErNzMaWz4sTwTrNqVe0n1s5rEhT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 52 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 4054ad5f-e7db-4cad-bb5c-91108323c169
+  servername: bApJ1QaPjK4.0SdS0Li1bWcZ0I76iT0GjXv1.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 53 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: '/@Marisa_kristi '
+    headers:
+      Host: 5iv93opy8jus9z.bjo5si35c9i9ud4242fado49188obkoiermjuxj7zgxu.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 48a3d3a6-4fbb-4842-9f7b-71a976b3fbb5
+  servername: 5Iv93OpY8JuS9Z.BjO5Si35C9I9Ud4242FaDo49188oBkOiErMjUxJ7ZgXu.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 54 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 995647dd-614b-4efd-8147-5937f962e806
+  servername: sXyYvIhKeKtLx4rJxSdJ.PkC73pHpWeU4RbXbAtM444.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 55 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: e431e7d1-2bbe-4907-8015-29f05d3558ac
+  servername: wOc0zVrF11w2eNdU.DpHdLc1u77Bs3y4kVuSsBuAp4p576f1wS7IgThQ8ZbF3.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 56 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 9b71c9bd-6418-462b-82b4-4a30690e0d47
+  servername: rUu2rX-OyCdRnSrZc.9UoKoLpK04vMg2eCqB8OyS7.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 57 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 8d8ff2c4-9031-4d76-a493-a7a391864aae
+  servername: mW5QiSaV.WjWqViE0Wb1eQhB8E83cLqDoQ3M5P9A4On.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 58 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 1ffbf1ee-e5a1-47c9-b614-be27e7b228c8
+  servername: jLn31QtSwDkUt5.60KoHcOgNyWyBgUuQ3OuC818OoFnXfVn35DaOtT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 61 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 925d8702-09d5-4c14-b2e9-451d67b32440
+  servername: sXyYvIhKeKtLx4rJxSdJ.PkC73pHpWeU4RbXbAtM444.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 63 (家宽) - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: d9680359-e702-4781-90c6-d475780776a3
+  servername: jLn31QtSwDkUt5.60KoHcOgNyWyBgUuQ3OuC818OoFnXfVn35DaOtT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 64 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: dbed24c3-4d22-48b2-8ccb-8e168d7f8b40
+  servername: jLn31QtSwDkUt5.60KoHcOgNyWyBgUuQ3OuC818OoFnXfVn35DaOtT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 65 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 980df025-74b9-4853-93e8-fb813006d7e5
+  servername: d-l28T5-65-B.PbE40wMcUjAw726h7cPqErNzMaWz4sTwTrNqVe0n1s5rEhT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 66 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: f9d2937a-94e4-444a-95df-103faf1dd3fd
+  servername: kQjIfHg9rW.TrAdSc8p9xP7WxYqMc1wY0Ah.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 67 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 8d955d71-ed5d-4f4c-ae68-42d120f06861
+  servername: kQjIfHg9rW.TrAdSc8p9xP7WxYqMc1wY0Ah.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 68 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: beec57a5-8266-4279-b279-f495bdc70699
+  servername: bApJ1QaPjK4.0SdS0Li1bWcZ0I76iT0GjXv1.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 69 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: deb1ae4f-a6b3-4ba3-8fb7-b18a05252928
+  servername: sXyYvIhKeKtLx4rJxSdJ.PkC73pHpWeU4RbXbAtM444.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 70 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 3011e40c-228f-4f2e-9dbf-5b256887e071
+  servername: jLn31QtSwDkUt5.60KoHcOgNyWyBgUuQ3OuC818OoFnXfVn35DaOtT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 72 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 7cf16c7c-f5e8-401f-8d0e-7542c447bf58
+  servername: rUu2rX-OyCdRnSrZc.9UoKoLpK04vMg2eCqB8OyS7.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 73 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 7e622534-4a90-40ba-bb30-5cb5403be121
+  servername: d-l28T5-65-B.PbE40wMcUjAw726h7cPqErNzMaWz4sTwTrNqVe0n1s5rEhT.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 74 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: f11eaecc-8e8e-4840-8d5a-cbc67cab4cef
+  servername: 2-gYs60WmZb6bQzD.QpSjN114Hh3vLpH9Z60sEsZ0AgJaWpWrOnEg.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
+  - 🏠 住宅家宽
   - DIRECT
-  - 🇯🇵 日本 (Japan) 510 - xiaohe
+  - 🇯🇵 日本 (Japan) 01 - xiaohe
+  - 🇯🇵 日本 (Japan) 02 - xiaohe
+  - 🇯🇵 日本 (Japan) 03 - xiaohe
+  - 🇯🇵 日本 (Japan) 04 - xiaohe
+  - 🇯🇵 日本 (Japan) 05 - xiaohe
+  - 🇯🇵 日本 (Japan) 06 - xiaohe
+  - 🇯🇵 日本 (Japan) 07 - xiaohe
+  - 🇯🇵 日本 (Japan) 08 - xiaohe
+  - 🇯🇵 日本 (Japan) 09 - xiaohe
+  - 🇯🇵 日本 (Japan) 10 - xiaohe
+  - 🇯🇵 日本 (Japan) 11 - xiaohe
+  - 🇯🇵 日本 (Japan) 12 - xiaohe
+  - 🇯🇵 日本 (Japan) 13 - xiaohe
+  - 🇯🇵 日本 (Japan) 16 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 18 - xiaohe
+  - 🇯🇵 日本 (Japan) 19 - xiaohe
+  - 🇯🇵 日本 (Japan) 20 - xiaohe
+  - 🇯🇵 日本 (Japan) 21 - xiaohe
+  - 🇯🇵 日本 (Japan) 23 - xiaohe
+  - 🇯🇵 日本 (Japan) 24 - xiaohe
+  - 🇯🇵 日本 (Japan) 25 - xiaohe
+  - 🇯🇵 日本 (Japan) 26 - xiaohe
+  - 🇯🇵 日本 (Japan) 29 - xiaohe
+  - 🇯🇵 日本 (Japan) 31 - xiaohe
+  - 🇯🇵 日本 (Japan) 37 - xiaohe
+  - 🇯🇵 日本 (Japan) 38 - xiaohe
+  - 🇯🇵 日本 (Japan) 39 - xiaohe
+  - 🇯🇵 日本 (Japan) 40 - xiaohe
+  - 🇯🇵 日本 (Japan) 41 - xiaohe
+  - 🇯🇵 日本 (Japan) 47 - xiaohe
+  - 🇯🇵 日本 (Japan) 48 - xiaohe
+  - 🇯🇵 日本 (Japan) 49 - xiaohe
+  - 🇯🇵 日本 (Japan) 50 - xiaohe
+  - 🇯🇵 日本 (Japan) 51 - xiaohe
+  - 🇯🇵 日本 (Japan) 52 - xiaohe
+  - 🇯🇵 日本 (Japan) 53 - xiaohe
+  - 🇯🇵 日本 (Japan) 54 - xiaohe
+  - 🇯🇵 日本 (Japan) 55 - xiaohe
+  - 🇯🇵 日本 (Japan) 56 - xiaohe
+  - 🇯🇵 日本 (Japan) 57 - xiaohe
+  - 🇯🇵 日本 (Japan) 58 - xiaohe
+  - 🇯🇵 日本 (Japan) 61 - xiaohe
+  - 🇯🇵 日本 (Japan) 63 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 64 - xiaohe
+  - 🇯🇵 日本 (Japan) 65 - xiaohe
+  - 🇯🇵 日本 (Japan) 66 - xiaohe
+  - 🇯🇵 日本 (Japan) 67 - xiaohe
+  - 🇯🇵 日本 (Japan) 68 - xiaohe
+  - 🇯🇵 日本 (Japan) 69 - xiaohe
+  - 🇯🇵 日本 (Japan) 70 - xiaohe
+  - 🇯🇵 日本 (Japan) 72 - xiaohe
+  - 🇯🇵 日本 (Japan) 73 - xiaohe
+  - 🇯🇵 日本 (Japan) 74 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇯🇵 日本 (Japan) 510 - xiaohe
+  - 🇯🇵 日本 (Japan) 01 - xiaohe
+  - 🇯🇵 日本 (Japan) 02 - xiaohe
+  - 🇯🇵 日本 (Japan) 03 - xiaohe
+  - 🇯🇵 日本 (Japan) 04 - xiaohe
+  - 🇯🇵 日本 (Japan) 05 - xiaohe
+  - 🇯🇵 日本 (Japan) 06 - xiaohe
+  - 🇯🇵 日本 (Japan) 07 - xiaohe
+  - 🇯🇵 日本 (Japan) 08 - xiaohe
+  - 🇯🇵 日本 (Japan) 09 - xiaohe
+  - 🇯🇵 日本 (Japan) 10 - xiaohe
+  - 🇯🇵 日本 (Japan) 11 - xiaohe
+  - 🇯🇵 日本 (Japan) 12 - xiaohe
+  - 🇯🇵 日本 (Japan) 13 - xiaohe
+  - 🇯🇵 日本 (Japan) 16 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 18 - xiaohe
+  - 🇯🇵 日本 (Japan) 19 - xiaohe
+  - 🇯🇵 日本 (Japan) 20 - xiaohe
+  - 🇯🇵 日本 (Japan) 21 - xiaohe
+  - 🇯🇵 日本 (Japan) 23 - xiaohe
+  - 🇯🇵 日本 (Japan) 24 - xiaohe
+  - 🇯🇵 日本 (Japan) 25 - xiaohe
+  - 🇯🇵 日本 (Japan) 26 - xiaohe
+  - 🇯🇵 日本 (Japan) 29 - xiaohe
+  - 🇯🇵 日本 (Japan) 31 - xiaohe
+  - 🇯🇵 日本 (Japan) 37 - xiaohe
+  - 🇯🇵 日本 (Japan) 38 - xiaohe
+  - 🇯🇵 日本 (Japan) 39 - xiaohe
+  - 🇯🇵 日本 (Japan) 40 - xiaohe
+  - 🇯🇵 日本 (Japan) 41 - xiaohe
+  - 🇯🇵 日本 (Japan) 47 - xiaohe
+  - 🇯🇵 日本 (Japan) 48 - xiaohe
+  - 🇯🇵 日本 (Japan) 49 - xiaohe
+  - 🇯🇵 日本 (Japan) 50 - xiaohe
+  - 🇯🇵 日本 (Japan) 51 - xiaohe
+  - 🇯🇵 日本 (Japan) 52 - xiaohe
+  - 🇯🇵 日本 (Japan) 53 - xiaohe
+  - 🇯🇵 日本 (Japan) 54 - xiaohe
+  - 🇯🇵 日本 (Japan) 55 - xiaohe
+  - 🇯🇵 日本 (Japan) 56 - xiaohe
+  - 🇯🇵 日本 (Japan) 57 - xiaohe
+  - 🇯🇵 日本 (Japan) 58 - xiaohe
+  - 🇯🇵 日本 (Japan) 61 - xiaohe
+  - 🇯🇵 日本 (Japan) 63 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 64 - xiaohe
+  - 🇯🇵 日本 (Japan) 65 - xiaohe
+  - 🇯🇵 日本 (Japan) 66 - xiaohe
+  - 🇯🇵 日本 (Japan) 67 - xiaohe
+  - 🇯🇵 日本 (Japan) 68 - xiaohe
+  - 🇯🇵 日本 (Japan) 69 - xiaohe
+  - 🇯🇵 日本 (Japan) 70 - xiaohe
+  - 🇯🇵 日本 (Japan) 72 - xiaohe
+  - 🇯🇵 日本 (Japan) 73 - xiaohe
+  - 🇯🇵 日本 (Japan) 74 - xiaohe
+- name: 🏠 住宅家宽
+  type: select
+  proxies:
+  - ⚡ 家宽优选
+  - 🇯🇵 日本 (Japan) 16 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 63 (家宽) - xiaohe
+- name: ⚡ 家宽优选
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 🇯🇵 日本 (Japan) 16 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 63 (家宽) - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

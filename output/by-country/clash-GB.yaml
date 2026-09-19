@@ -5,7 +5,7 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇬🇧 英国 (United Kingdom) 55 - xiaohe
+- name: 🇬🇧 英国 (United Kingdom) 01 - xiaohe
   server: 172.66.44.77
   port: 2053
   udp: true
@@ -16,17 +16,17 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/Wp4FqWLcoYNYXCovu4
+    path: /vl/b8wfCw4F7uhIQKmZ
     headers:
-      Host: api-hub-c9a393.alimirzai539-484.workers.dev
+      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 8f53fce2-6c17-4e37-9ae9-d969fd85117c
-  servername: aPi-hUb-c9a393.AlImIrZaI539-484.woRkErs.dEv
-- name: 🇬🇧 英国 (United Kingdom) 167 - xiaohe
+  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
+  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
+- name: 🇬🇧 英国 (United Kingdom) 02 - xiaohe
   server: 172.66.44.77
-  port: 443
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -35,7 +35,7 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/920t3su0WlJIfAjKvTK6bDSQC
+    path: /vl/f5ENj3f26MOeKDbJzPpYjfD3GFT9
     headers:
       Host: xaz7ydgqrdkfprd-9vnt.pages.dev
     max-early-data: 2560
@@ -43,28 +43,9 @@ proxies:
   type: vless
   uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
   servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
-- name: 🇬🇧 英国 (United Kingdom) 178 - xiaohe
-  server: 172.66.44.77
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /vl/TP2OERpQc9nWhYcpBeGK
-    headers:
-      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
-  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
-- name: 🇬🇧 英国 (United Kingdom) 180 - xiaohe
-  server: 172.66.44.77
-  port: 443
+- name: 🇬🇧 英国 (United Kingdom) 03 - xiaohe
+  server: 172.66.47.179
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -81,9 +62,9 @@ proxies:
   type: vless
   uuid: dce8ca0a-ed26-45c9-9962-38888c19a0ad
   servername: sTiLl-sCeNe-fDa3.DeVtAhAiR.woRkErs.dEv
-- name: 🇬🇧 英国 (United Kingdom) 191 - xiaohe
+- name: 🇬🇧 英国 (United Kingdom) 04 - xiaohe
   server: 172.66.47.179
-  port: 443
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -92,15 +73,15 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/ubAOxAoJLefKXh3WRG4tCZXbl
+    path: /vl/zXLTmz3hE3szn64f
     headers:
-      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
+      Host: l0n0qgkdttu061g57fhqzbet333s4t.ade-1004.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
-  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
-- name: 🇬🇧 英国 (United Kingdom) 241 - xiaohe
+  uuid: bd8c736e-cae1-43d7-b573-9672e6ca4989
+  servername: l0n0qGkDtTu061g57FhQzBeT333S4T.AdE-1004.woRkErs.dEv
+- name: 🇬🇧 英国 (United Kingdom) 05 - xiaohe
   server: 172.66.44.77
   port: 2053
   udp: true
@@ -111,17 +92,17 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/ERYN0G44hia16zhR
+    path: /eyJqdW5rIjoid2JBOTRVclNMOVdBSVQiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119
     headers:
-      Host: 05a5f9v5a6cm563ieoye7j-8tnpd.hsysyegegrygvvvdujhh.workers.dev
+      Host: steep-bonus-8e6a.amirhon1376.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 527451fe-ee1f-4e6f-94ca-808f055f7c9b
-  servername: 05a5f9v5a6cM563IeOyE7J-8tNpD.HsYsYeGeGrYgVvVdUjHh.woRkErs.dEv
-- name: 🇬🇧 英国 (United Kingdom) 274 - xiaohe
-  server: 172.66.47.179
-  port: 443
+  uuid: f2f4e2dc-3e7b-402f-a461-b48acc6aa310
+  servername: sTeEp-bOnUs-8E6A.AmIrHoN1376.woRkErs.dEv
+- name: 🇬🇧 英国 (United Kingdom) 06 - xiaohe
+  server: 172.66.44.77
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -130,7 +111,7 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/JJ8w7ml4w8wx1702sZNCA8EWm
+    path: /vl/9i6Droh3pkQI1xNF3pxEjWeJ05H0tI
     headers:
       Host: xaz7ydgqrdkfprd-9vnt.pages.dev
     max-early-data: 2560
@@ -144,26 +125,24 @@ proxy-groups:
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇬🇧 英国 (United Kingdom) 55 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 167 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 178 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 180 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 191 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 241 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 274 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 01 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 02 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 03 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 04 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 05 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 06 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇬🇧 英国 (United Kingdom) 55 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 167 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 178 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 180 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 191 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 241 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 274 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 01 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 02 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 03 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 04 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 05 - xiaohe
+  - 🇬🇧 英国 (United Kingdom) 06 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

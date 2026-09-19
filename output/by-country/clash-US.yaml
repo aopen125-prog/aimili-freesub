@@ -5,7 +5,102 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇺🇸 美国 (United States) 66 - xiaohe
+- name: 🇺🇸 美国 (United States) 70 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime09.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: vMs.lIfEtImE09.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 117 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: c7dabe95.proxy-978.pages.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  servername: c7dAbE95.PrOxY-978.paGEs.DeV
+- name: 🇺🇸 美国 (United States) 128 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiemxGMEFDU1VDRyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
+    headers:
+      Host: ez-82c7e7.abobaba.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: fee1da7e-a258-4456-8e5e-8ecf6518ed12
+  servername: eZ-82C7E7.aBoBaBa.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 161 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: c7dabe95.proxy-978.pages.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  servername: c7dAbE95.PrOxY-978.paGEs.DeV
+- name: 🇺🇸 美国 (United States) 181 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: c7dabe95.proxy-978.pages.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  servername: c7dAbE95.PrOxY-978.paGEs.DeV
+- name: 🇺🇸 美国 (United States) 188 - xiaohe
   server: 172.66.44.77
   port: 443
   udp: true
@@ -16,15 +111,34 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /juvsrnmgdu8i0179k5
+    path: /eyJqdW5rIjoiQkFLTnhqM2tZTSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
     headers:
-      Host: index.harmonica02.workers.dev
+      Host: ez-5faafb.esmaoi.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: a22bff60-a40a-4250-bde2-4c660e363b47
-  servername: iNdEx.hArMoNiCa02.woRkErs.dEv
-- name: 🇺🇸 美国 (United States) 133 - xiaohe
+  uuid: 518de0d4-6ce8-4404-80db-23c4a8806128
+  servername: eZ-5fAaFb.eSmAoI.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 193 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: c7dabe95.proxy-978.pages.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  servername: c7dAbE95.PrOxY-978.paGEs.DeV
+- name: 🇺🇸 美国 (United States) 205 - xiaohe
   server: 172.66.47.179
   port: 2053
   udp: true
@@ -35,15 +149,15 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/ERYN0G44hia16zhR
+    path: /eyJqdW5rIjoiZUJZR2pXVFByVyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjEwOS4xMjAuMTU4LjE0OSJdfQ==
     headers:
-      Host: 05a5f9v5a6cm563ieoye7j-8tnpd.hsysyegegrygvvvdujhh.workers.dev
+      Host: misty-bread-fd96.salehinezhadali.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 527451fe-ee1f-4e6f-94ca-808f055f7c9b
-  servername: 05a5f9v5a6cM563IeOyE7J-8tNpD.HsYsYeGeGrYgVvVdUjHh.woRkErs.dEv
-- name: 🇺🇸 美国 (United States) 177 - xiaohe
+  uuid: d028eaf5-c5ef-49a0-85c6-4f4816af8053
+  servername: mIsTy-bReAd-fD96.SaLeHiNeZhAdAlI.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 208 - xiaohe
   server: 172.66.47.179
   port: 2053
   udp: true
@@ -54,33 +168,14 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/JQTOK7dgx9Ge0bABj6wHhWLaB531
+    path: /
     headers:
-      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
+      Host: vms.lifetime06.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
-  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
-- name: 🇺🇸 美国 (United States) 212 - xiaohe
-  server: 172.66.47.179
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /vl/OKXGIwxO4sGnkJDe
-    headers:
-      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
-  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: vMs.lIfEtImE06.woRkErs.dEv
 - name: 🇺🇸 美国 (United States) 213 - xiaohe
   server: 172.66.47.179
   port: 2053
@@ -92,54 +187,16 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /
+    path: /vl/WzJrIU8RBLiKEwHrtTJL2XpzurfIundt
     headers:
-      Host: dry-butterfly-8eb9.tmpgnacio83.workers.dev
+      Host: dl2uf-ivdezilz3e86rk18.hhvt37tjm2xbosql5hxogn-y.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: d042a74a-c305-4eec-a89f-39a348022c92
-  servername: dRy-bUtTeRfLy-8Eb9.TmPgNaCiO83.woRkErs.dEv
-- name: 🇺🇸 美国 (United States) 224 - xiaohe
+  uuid: af0db32b-2cb0-48c7-b04e-96003f8c2369
+  servername: dL2Uf-iVdEzIlZ3E86rK18.HhVt37TjM2XbOsQl5hXoGn-y.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 219 - xiaohe
   server: 172.66.47.179
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /vl/4JG6msU4Ti1huDDOkPBqNsZM
-    headers:
-      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
-  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
-- name: 🇺🇸 美国 (United States) 242 - xiaohe
-  server: 172.66.44.77
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: kkkk-83j.pages.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: b940be1b-3998-45d2-bf7b-06e7b6c4987a
-  servername: kKkK-83J.paGEs.DeV
-- name: 🇺🇸 美国 (United States) 258 - xiaohe
-  server: 172.66.44.77
   port: 443
   udp: true
   tls: true
@@ -151,13 +208,13 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: kkkk-bq7.pages.dev
+      Host: c7dabe95.proxy-978.pages.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: b940be1b-3998-45d2-bf7b-06e7b6c4987a
-  servername: kKkK-Bq7.paGEs.DeV
-- name: 🇺🇸 美国 (United States) 291 - xiaohe
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  servername: c7dAbE95.PrOxY-978.paGEs.DeV
+- name: 🇺🇸 美国 (United States) 220 - xiaohe
   server: 172.66.44.77
   port: 2053
   udp: true
@@ -170,34 +227,15 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: kkkk-bq7.pages.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: b940be1b-3998-45d2-bf7b-06e7b6c4987a
-  servername: kKkK-Bq7.paGEs.DeV
-- name: 🇺🇸 美国 (United States) 298 - xiaohe
-  server: 172.66.44.77
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: vms.lifetime40.workers.dev
+      Host: vms.lifetime18.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: vMs.lIfEtImE40.woRkErs.dEv
-- name: 🇺🇸 美国 (United States) 330 - xiaohe
+  servername: vMs.lIfEtImE18.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 240 - xiaohe
   server: 172.66.44.77
-  port: 2053
+  port: 443
   udp: true
   tls: true
   skip-cert-verify: true
@@ -206,36 +244,36 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/1s1Q6MMYXzzLdNYoB1SjpDLfVR
+    path: /vl/P7l2zlifeGb5UNmfWMkoVakVd
     headers:
-      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
+      Host: 5xgovtcyqgoh5tedrlj6sg--sn9pbh.mahsapodcst.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
-  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
-- name: 🇺🇸 美国 (United States) 332 - xiaohe
-  server: 172.66.47.179
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /stream/PANEL_ZEUS/e0dfede8abc0
-    headers:
-      Host: xoz60debusrs.lezuwaeiunjs.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 50414e45-4c5f-5a45-5553-e0dfede8abc0
-  servername: xOz60DeBuSrS.LeZuWaEiUnJs.woRkErs.dEv
-- name: 🇺🇸 美国 (United States) 336 - xiaohe
+  uuid: a4ec0cdd-a71d-4093-b8e1-aa9bfbcd75eb
+  servername: 5XgOvTcYqGoH5TeDrLj6sG--sN9PbH.MaHsApOdCsT.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 245 - xiaohe
   server: 172.66.47.179
   port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/qS74oZnpprf6Qgqx
+    headers:
+      Host: p9c85ckpnai98sdljzhuwwnolmcmxw88.cdzsqje4u3ms.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 5f4acc06-8cbf-4172-92d2-8f475e51f781
+  servername: p9c85CkPnAi98SdLjZhUwWnOlMcMxW88.CdZsQjE4U3Ms.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 247 - xiaohe
+  server: 172.66.47.179
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -252,7 +290,26 @@ proxies:
   type: vless
   uuid: b940be1b-3998-45d2-bf7b-06e7b6c4987a
   servername: kKkK-Bq7.paGEs.DeV
-- name: 🇺🇸 美国 (United States) 338 - xiaohe
+- name: 🇺🇸 美国 (United States) 256 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime54.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: vMs.lIfEtImE54.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 263 - xiaohe
   server: 172.66.44.77
   port: 2053
   udp: true
@@ -263,15 +320,53 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /8eaZJhRwB5zzDy81
+    path: /
     headers:
-      Host: d2127a49-flat-wood-c4b5.milia-akbarpoor.workers.dev
+      Host: vms.lifetime61.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 0836463b-214f-4af6-aa85-85a56a62388e
-  servername: d2127A49-FlAt-wOoD-C4B5.mIlIa-aKbArPoOr.woRkErs.dEv
-- name: 🇺🇸 美国 (United States) 344 - xiaohe
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: vMs.lIfEtImE61.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 264 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /stream/PANEL_ZEUS/48493148ec15
+    headers:
+      Host: cgzdynepurqs.mercury061.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 50414e45-4c5f-5a45-5553-48493148ec15
+  servername: cGzDyNePuRqS.MeRcUrY061.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 273 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /stream/PANEL_ZEUS/e0dfede8abc0
+    headers:
+      Host: xoz60debusrs.lezuwaeiunjs.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 50414e45-4c5f-5a45-5553-e0dfede8abc0
+  servername: xOz60DeBuSrS.LeZuWaEiUnJs.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 274 - xiaohe
   server: 172.66.44.77
   port: 2053
   udp: true
@@ -290,7 +385,102 @@ proxies:
   type: vless
   uuid: 50414e45-4c5f-5a45-5553-e0dfede8abc0
   servername: xOz60DeBuSrS.LeZuWaEiUnJs.woRkErs.dEv
-- name: 🇺🇸 美国 (United States) 362 - xiaohe
+- name: 🇺🇸 美国 (United States) 276 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/lYNtP7z8pJUmfp01tz5wEnuDujJtZ
+    headers:
+      Host: fpoixf69hqt3e6d4urtb.mamadneizeh.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 0b41f339-5809-46ef-8351-b03fdc441539
+  servername: fPoIxF69hQt3e6d4uRtB.MaMaDnEiZeH.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 278 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiVzg3NkFVRjZaUCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
+    headers:
+      Host: snowy-glade-85fa.arshiatakalloo88.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: a43a9a45-7387-4faf-ad06-24b1ae181fdc
+  servername: sNoWy-gLaDe-85fA.ArShIaTaKaLlOo88.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 280 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /stream/PANEL_ZEUS/e0dfede8abc0
+    headers:
+      Host: xoz60debusrs.lezuwaeiunjs.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 50414e45-4c5f-5a45-5553-e0dfede8abc0
+  servername: xOz60DeBuSrS.LeZuWaEiUnJs.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 283 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /stream/PANEL_ZEUS/e0dfede8abc0
+    headers:
+      Host: xoz60debusrs.lezuwaeiunjs.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 50414e45-4c5f-5a45-5553-e0dfede8abc0
+  servername: xOz60DeBuSrS.LeZuWaEiUnJs.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 292 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /sync
+    headers:
+      Host: wireguard.ahmad-kh5716.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 73796e63-0000-4000-8000-000000000000
+  servername: wIrEgUaRd.aHmAd-kH5716.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 297 - xiaohe
   server: 172.66.47.179
   port: 443
   udp: true
@@ -303,13 +493,32 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: kkkk-83j.pages.dev
+      Host: ez-4b5fd4.appelidmymat.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: b940be1b-3998-45d2-bf7b-06e7b6c4987a
-  servername: kKkK-83J.paGEs.DeV
-- name: 🇺🇸 美国 (United States) 593 - xiaohe
+  uuid: 566c0473-382e-aabb-c62a-f5bb00000000
+  servername: eZ-4b5fD4.aPpElIdMyMaT.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 300 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 1eb148ad-8549-4d07-858f-253a8f5c33c4
+  servername: 2-gYs60WmZb6bQzD.QpSjN114Hh3vLpH9Z60sEsZ0AgJaWpWrOnEg.woRkErs.dEv
+- name: 🇺🇸 美国 (United States) 313 - xiaohe
   server: 172.66.44.77
   port: 2053
   udp: true
@@ -328,7 +537,7 @@ proxies:
   type: vless
   uuid: a8b1d666-d3ba-4b17-90c4-ba7514c74f78
   servername: xStAcK.MaHaNfIxE.woRkErs.dEv
-- name: 🇺🇸 美国 (United States) 663 - xiaohe
+- name: 🇺🇸 美国 (United States) 319 - xiaohe
   server: 172.66.47.179
   port: 2053
   udp: true
@@ -339,62 +548,84 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /stream/PANEL_ZEUS/cee599ec8b57
+    path: //
     headers:
-      Host: zeus-panel-mvtum1.mahdiharchegani.workers.dev
+      Host: green-credit-7e7b.vpnfreev2rayconfig-sale1.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 50414e45-4c5f-5a45-5553-cee599ec8b57
-  servername: zEuS-PaNeL-MvTuM1.mAhDiHaRcHeGaNi.woRkErs.dEv
+  uuid: 5a0028f9-c656-cec9-4b61-54678477a408
+  servername: gReEn-cReDiT-7e7b.vPnFrEeV2RaYcOnFiG-SaLe1.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇺🇸 美国 (United States) 66 - xiaohe
-  - 🇺🇸 美国 (United States) 133 - xiaohe
-  - 🇺🇸 美国 (United States) 177 - xiaohe
-  - 🇺🇸 美国 (United States) 212 - xiaohe
+  - 🇺🇸 美国 (United States) 70 - xiaohe
+  - 🇺🇸 美国 (United States) 117 - xiaohe
+  - 🇺🇸 美国 (United States) 128 - xiaohe
+  - 🇺🇸 美国 (United States) 161 - xiaohe
+  - 🇺🇸 美国 (United States) 181 - xiaohe
+  - 🇺🇸 美国 (United States) 188 - xiaohe
+  - 🇺🇸 美国 (United States) 193 - xiaohe
+  - 🇺🇸 美国 (United States) 205 - xiaohe
+  - 🇺🇸 美国 (United States) 208 - xiaohe
   - 🇺🇸 美国 (United States) 213 - xiaohe
-  - 🇺🇸 美国 (United States) 224 - xiaohe
-  - 🇺🇸 美国 (United States) 242 - xiaohe
-  - 🇺🇸 美国 (United States) 258 - xiaohe
-  - 🇺🇸 美国 (United States) 291 - xiaohe
-  - 🇺🇸 美国 (United States) 298 - xiaohe
-  - 🇺🇸 美国 (United States) 330 - xiaohe
-  - 🇺🇸 美国 (United States) 332 - xiaohe
-  - 🇺🇸 美国 (United States) 336 - xiaohe
-  - 🇺🇸 美国 (United States) 338 - xiaohe
-  - 🇺🇸 美国 (United States) 344 - xiaohe
-  - 🇺🇸 美国 (United States) 362 - xiaohe
-  - 🇺🇸 美国 (United States) 593 - xiaohe
-  - 🇺🇸 美国 (United States) 663 - xiaohe
+  - 🇺🇸 美国 (United States) 219 - xiaohe
+  - 🇺🇸 美国 (United States) 220 - xiaohe
+  - 🇺🇸 美国 (United States) 240 - xiaohe
+  - 🇺🇸 美国 (United States) 245 - xiaohe
+  - 🇺🇸 美国 (United States) 247 - xiaohe
+  - 🇺🇸 美国 (United States) 256 - xiaohe
+  - 🇺🇸 美国 (United States) 263 - xiaohe
+  - 🇺🇸 美国 (United States) 264 - xiaohe
+  - 🇺🇸 美国 (United States) 273 - xiaohe
+  - 🇺🇸 美国 (United States) 274 - xiaohe
+  - 🇺🇸 美国 (United States) 276 - xiaohe
+  - 🇺🇸 美国 (United States) 278 - xiaohe
+  - 🇺🇸 美国 (United States) 280 - xiaohe
+  - 🇺🇸 美国 (United States) 283 - xiaohe
+  - 🇺🇸 美国 (United States) 292 - xiaohe
+  - 🇺🇸 美国 (United States) 297 - xiaohe
+  - 🇺🇸 美国 (United States) 300 - xiaohe
+  - 🇺🇸 美国 (United States) 313 - xiaohe
+  - 🇺🇸 美国 (United States) 319 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇺🇸 美国 (United States) 66 - xiaohe
-  - 🇺🇸 美国 (United States) 133 - xiaohe
-  - 🇺🇸 美国 (United States) 177 - xiaohe
-  - 🇺🇸 美国 (United States) 212 - xiaohe
+  - 🇺🇸 美国 (United States) 70 - xiaohe
+  - 🇺🇸 美国 (United States) 117 - xiaohe
+  - 🇺🇸 美国 (United States) 128 - xiaohe
+  - 🇺🇸 美国 (United States) 161 - xiaohe
+  - 🇺🇸 美国 (United States) 181 - xiaohe
+  - 🇺🇸 美国 (United States) 188 - xiaohe
+  - 🇺🇸 美国 (United States) 193 - xiaohe
+  - 🇺🇸 美国 (United States) 205 - xiaohe
+  - 🇺🇸 美国 (United States) 208 - xiaohe
   - 🇺🇸 美国 (United States) 213 - xiaohe
-  - 🇺🇸 美国 (United States) 224 - xiaohe
-  - 🇺🇸 美国 (United States) 242 - xiaohe
-  - 🇺🇸 美国 (United States) 258 - xiaohe
-  - 🇺🇸 美国 (United States) 291 - xiaohe
-  - 🇺🇸 美国 (United States) 298 - xiaohe
-  - 🇺🇸 美国 (United States) 330 - xiaohe
-  - 🇺🇸 美国 (United States) 332 - xiaohe
-  - 🇺🇸 美国 (United States) 336 - xiaohe
-  - 🇺🇸 美国 (United States) 338 - xiaohe
-  - 🇺🇸 美国 (United States) 344 - xiaohe
-  - 🇺🇸 美国 (United States) 362 - xiaohe
-  - 🇺🇸 美国 (United States) 593 - xiaohe
-  - 🇺🇸 美国 (United States) 663 - xiaohe
+  - 🇺🇸 美国 (United States) 219 - xiaohe
+  - 🇺🇸 美国 (United States) 220 - xiaohe
+  - 🇺🇸 美国 (United States) 240 - xiaohe
+  - 🇺🇸 美国 (United States) 245 - xiaohe
+  - 🇺🇸 美国 (United States) 247 - xiaohe
+  - 🇺🇸 美国 (United States) 256 - xiaohe
+  - 🇺🇸 美国 (United States) 263 - xiaohe
+  - 🇺🇸 美国 (United States) 264 - xiaohe
+  - 🇺🇸 美国 (United States) 273 - xiaohe
+  - 🇺🇸 美国 (United States) 274 - xiaohe
+  - 🇺🇸 美国 (United States) 276 - xiaohe
+  - 🇺🇸 美国 (United States) 278 - xiaohe
+  - 🇺🇸 美国 (United States) 280 - xiaohe
+  - 🇺🇸 美国 (United States) 283 - xiaohe
+  - 🇺🇸 美国 (United States) 292 - xiaohe
+  - 🇺🇸 美国 (United States) 297 - xiaohe
+  - 🇺🇸 美国 (United States) 300 - xiaohe
+  - 🇺🇸 美国 (United States) 313 - xiaohe
+  - 🇺🇸 美国 (United States) 319 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT
