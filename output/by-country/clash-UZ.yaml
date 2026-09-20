@@ -7,7 +7,7 @@ log-level: info
 proxies:
 - name: 🇺🇿 乌兹别克斯坦 (Uzbekistan) 02 - xiaohe
   server: 172.66.44.77
-  port: 2053
+  port: 443
   udp: true
   tls: true
   skip-cert-verify: true
@@ -16,16 +16,16 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /stream/PANEL_ZEUS/4017ea8bea78/loc-4
+    path: '/stream/PANEL_ZEUS/4eef5adc237a/loc-1 '
     headers:
-      Host: zeus-panel-mvtum1.mahdiharchegani.workers.dev
+      Host: r5zenrelur2s.pqzdileiu8es.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 50414e45-4c5f-5a45-5553-4017ea8bea78
-  servername: zEuS-PaNeL-MvTuM1.mAhDiHaRcHeGaNi.woRkErs.dEv
+  uuid: 50414e45-4c5f-5a45-5553-4eef5adc237a
+  servername: r5zEnReLuR2S.PqZdIlEiU8Es.woRkErs.dEv
 - name: 🇺🇿 乌兹别克斯坦 (Uzbekistan) 03 - xiaohe
-  server: 172.66.47.179
+  server: 172.66.44.77
   port: 443
   udp: true
   tls: true

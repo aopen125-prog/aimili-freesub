@@ -7,7 +7,7 @@ log-level: info
 proxies:
 - name: 🇧🇪 比利时 (Belgium) 01 - xiaohe
   server: 172.66.44.77
-  port: 443
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true

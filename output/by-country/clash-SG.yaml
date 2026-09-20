@@ -6,25 +6,6 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇸🇬 新加坡 (Singapore) 01 - xiaohe
-  server: 172.66.44.77
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /138.2.74.219-28616
-    headers:
-      Host: nautica-cff.kloningstrife002.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
-  servername: nAuTiCa-cFf.kLoNiNgStRiFe002.woRkErs.dEv
-- name: 🇸🇬 新加坡 (Singapore) 07 - xiaohe
   server: 172.66.47.179
   port: 443
   udp: true
@@ -35,14 +16,90 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/AXV9OSikKahaFsMy
+    path: /eyJqdW5rIjoiSFM1N0lLQmx2UU1qRzlnTiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
     headers:
-      Host: 9tg-d0htbrb5e3tp0c-o7ix23cx0f.ftfgblgft6-1h2iv2oo4h0.workers.dev
+      Host: 057.electrocellco-cf-057.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: cc08d2d0-8a7a-4469-81d2-c43704451271
-  servername: 9Tg-d0hTbRb5e3tP0C-O7Ix23Cx0f.fTfGbLgFt6-1h2iV2Oo4h0.woRkErs.dEv
+  uuid: 20e295db-a6af-4006-bfd6-91453f169968
+  servername: 057.eLeCtRoCeLlCo-cF-057.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 02 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime35.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: vMs.lIfEtImE35.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 03 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 72fbb611-628d-4afa-8198-bda3e38021f9
+  servername: 3T1YvByLa-rJ740G.28M7R63dTtYa6gAzMhOo.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 06 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: e579841b-70d6-40e4-bb5c-66e3a366fe83
+  servername: 8N9Qi6t-oWl.gEvC9S4N60cC3WzCmWhJyEzYdPmBcHoCxP.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 11 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: wkytah9k8oggj60.qzfi0skkopy875xhtc0l9pwds.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 74388b31-b0d9-4e49-bcb3-7280e0fab34e
+  servername: wKyTaH9K8OgGj60.qZfI0SkKoPy875xHtC0L9PwDs.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -50,7 +107,10 @@ proxy-groups:
   - ⚡ 自动优选
   - DIRECT
   - 🇸🇬 新加坡 (Singapore) 01 - xiaohe
-  - 🇸🇬 新加坡 (Singapore) 07 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 02 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 03 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 06 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 11 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -58,7 +118,10 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇸🇬 新加坡 (Singapore) 01 - xiaohe
-  - 🇸🇬 新加坡 (Singapore) 07 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 02 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 03 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 06 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 11 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

@@ -5,8 +5,8 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇬🇷 希腊 (Greece) 01 - xiaohe
-  server: 172.66.47.179
+- name: 🇧🇬 保加利亚 (Bulgaria) 06 - xiaohe
+  server: 172.66.44.77
   port: 443
   udp: true
   tls: true
@@ -16,28 +16,28 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /eyJqdW5rIjoiMXZFdnZOdVFvSkNWIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOlsiOTEuMTg2LjIxOS44MiJdfQ==
+    path: /stream/PANEL_ZEUS/4beea30ea96c/loc-0
     headers:
-      Host: fancy-rain-136e.thisisalee.workers.dev
+      Host: 4cz9gseouyns.2iz1ile4upks.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: d7d8af23-36cd-4c66-a42a-4469c177210f
-  servername: fAnCy-rAiN-136e.tHiSiSaLeE.woRkErs.dEv
+  uuid: 50414e45-4c5f-5a45-5553-4beea30ea96c
+  servername: 4Cz9gSeOuYnS.2iZ1IlE4UpKs.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇬🇷 希腊 (Greece) 01 - xiaohe
+  - 🇧🇬 保加利亚 (Bulgaria) 06 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇬🇷 希腊 (Greece) 01 - xiaohe
+  - 🇧🇬 保加利亚 (Bulgaria) 06 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT
