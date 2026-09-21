@@ -5,9 +5,9 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
+- name: 🇨🇭 瑞士 (Switzerland) 02 - xiaohe
   server: 172.66.44.77
-  port: 443
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -18,14 +18,14 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: vms.lifetime08.workers.dev
+      Host: netlivpn5505.ffffdsaaa.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: vMs.lIfEtImE08.woRkErs.dEv
-- name: 🇨🇭 瑞士 (Switzerland) 05 - xiaohe
-  server: 172.66.47.179
+  uuid: f6b5a6a3-f3e1-63ca-bb68-bdc400000000
+  servername: nEtLiVpN5505.FfFfDsAaA.woRkErs.dEv
+- name: 🇨🇭 瑞士 (Switzerland) 03 - xiaohe
+  server: 172.66.44.77
   port: 2053
   udp: true
   tls: true
@@ -49,16 +49,16 @@ proxy-groups:
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
-  - 🇨🇭 瑞士 (Switzerland) 05 - xiaohe
+  - 🇨🇭 瑞士 (Switzerland) 02 - xiaohe
+  - 🇨🇭 瑞士 (Switzerland) 03 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
-  - 🇨🇭 瑞士 (Switzerland) 05 - xiaohe
+  - 🇨🇭 瑞士 (Switzerland) 02 - xiaohe
+  - 🇨🇭 瑞士 (Switzerland) 03 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

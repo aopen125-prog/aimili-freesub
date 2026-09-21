@@ -5,7 +5,26 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇺🇿 乌兹别克斯坦 (Uzbekistan) 02 - xiaohe
+- name: 🇹🇷 土耳其 (Turkey) 01 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: index.harmonica02.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: a22bff60-a40a-4250-bde2-4c660e363b47
+  servername: iNdEx.hArMoNiCa02.woRkErs.dEv
+- name: 🇹🇷 土耳其 (Turkey) 02 - xiaohe
   server: 172.66.44.77
   port: 443
   udp: true
@@ -16,49 +35,30 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: '/stream/PANEL_ZEUS/4eef5adc237a/loc-1 '
+    path: /
     headers:
-      Host: r5zenrelur2s.pqzdileiu8es.workers.dev
+      Host: index.harmonica02.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 50414e45-4c5f-5a45-5553-4eef5adc237a
-  servername: r5zEnReLuR2S.PqZdIlEiU8Es.woRkErs.dEv
-- name: 🇺🇿 乌兹别克斯坦 (Uzbekistan) 03 - xiaohe
-  server: 172.66.44.77
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: '/stream/PANEL_ZEUS/4eef5adc237a/loc-1 '
-    headers:
-      Host: r5zenrelur2s.pqzdileiu8es.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 50414e45-4c5f-5a45-5553-4eef5adc237a
-  servername: r5zEnReLuR2S.PqZdIlEiU8Es.woRkErs.dEv
+  uuid: a22bff60-a40a-4250-bde2-4c660e363b47
+  servername: iNdEx.hArMoNiCa02.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 02 - xiaohe
-  - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 03 - xiaohe
+  - 🇹🇷 土耳其 (Turkey) 01 - xiaohe
+  - 🇹🇷 土耳其 (Turkey) 02 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 02 - xiaohe
-  - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 03 - xiaohe
+  - 🇹🇷 土耳其 (Turkey) 01 - xiaohe
+  - 🇹🇷 土耳其 (Turkey) 02 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

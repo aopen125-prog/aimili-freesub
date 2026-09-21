@@ -5,9 +5,9 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇮🇶 IQ 01 - xiaohe
-  server: 172.66.47.179
-  port: 443
+- name: 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+  server: 172.66.44.77
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -16,28 +16,28 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /eyJqdW5rIjoiZm5INktPV0lGcHI1NjNSOSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    path: /sync
     headers:
-      Host: square-salad-ebde.zdfgvccfguuyggg.workers.dev
+      Host: nahan-core.netizo09.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 31aa0950-eb19-45ff-94a2-af416deb3b90
-  servername: sQuArE-SaLaD-EbDe.zDfGvCcFgUuYgGg.woRkErs.dEv
+  uuid: dc8a9493-c54a-459e-d060-81a700000001
+  servername: nAhAn-cOrE.NeTiZo09.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇮🇶 IQ 01 - xiaohe
+  - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇮🇶 IQ 01 - xiaohe
+  - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

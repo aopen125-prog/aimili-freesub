@@ -5,27 +5,8 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇫🇷 法国 (France) 01 - xiaohe
-  server: 172.66.47.179
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /eyJqdW5rIjoiN2w4dDlRNVV5NkZ5NU1aeSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
-    headers:
-      Host: ezaccess-project-4c7950.ez-dc9bbb.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 96e341a7-3077-4613-b482-41bd9c90cc4d
-  servername: eZaCcEsS-PrOjEcT-4c7950.eZ-Dc9bBb.woRkErs.dEv
-- name: 🇫🇷 法国 (France) 15 - xiaohe
-  server: 172.66.47.179
+- name: 🇫🇷 法国 (France) 03 - xiaohe
+  server: 172.66.44.77
   port: 2053
   udp: true
   tls: true
@@ -43,7 +24,7 @@ proxies:
   type: vless
   uuid: 50414e45-4c5f-5a45-5553-5a26a30b00dc
   servername: 4QzSz6e8u00S.TlZw8lE6UbHs.woRkErs.dEv
-- name: 🇫🇷 法国 (France) 25 - xiaohe
+- name: 🇫🇷 法国 (France) 19 - xiaohe
   server: 172.66.44.77
   port: 443
   udp: true
@@ -54,16 +35,35 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /stream/TrexBridge/b52a90ada6ab
+    path: /stream/PANEL_ZEUS/5a26a30b00dc
     headers:
-      Host: trex-panel-ew6n46.zeus-e0oqfp.workers.dev
+      Host: 4qzsz6e8u00s.tlzw8le6ubhs.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 50414e45-4c5f-5a45-5553-b52a90ada6ab
-  servername: tReX-PaNeL-Ew6n46.zEuS-E0OqFp.woRkErs.dEv
+  uuid: 50414e45-4c5f-5a45-5553-5a26a30b00dc
+  servername: 4QzSz6e8u00S.TlZw8lE6UbHs.woRkErs.dEv
 - name: 🇫🇷 法国 (France) 26 - xiaohe
   server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /stream/TrexBridge/ef859652a80e
+    headers:
+      Host: trex-panel-nubj0s.samifakor.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 50414e45-4c5f-5a45-5553-ef859652a80e
+  servername: tReX-PaNeL-NuBj0s.sAmIfAkOr.woRkErs.dEv
+- name: 🇫🇷 法国 (France) 27 - xiaohe
+  server: 172.66.47.179
   port: 2053
   udp: true
   tls: true
@@ -87,20 +87,20 @@ proxy-groups:
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇫🇷 法国 (France) 01 - xiaohe
-  - 🇫🇷 法国 (France) 15 - xiaohe
-  - 🇫🇷 法国 (France) 25 - xiaohe
+  - 🇫🇷 法国 (France) 03 - xiaohe
+  - 🇫🇷 法国 (France) 19 - xiaohe
   - 🇫🇷 法国 (France) 26 - xiaohe
+  - 🇫🇷 法国 (France) 27 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇫🇷 法国 (France) 01 - xiaohe
-  - 🇫🇷 法国 (France) 15 - xiaohe
-  - 🇫🇷 法国 (France) 25 - xiaohe
+  - 🇫🇷 法国 (France) 03 - xiaohe
+  - 🇫🇷 法国 (France) 19 - xiaohe
   - 🇫🇷 法国 (France) 26 - xiaohe
+  - 🇫🇷 法国 (France) 27 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

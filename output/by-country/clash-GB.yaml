@@ -7,7 +7,7 @@ log-level: info
 proxies:
 - name: 🇬🇧 英国 (United Kingdom) 01 - xiaohe
   server: 172.66.47.179
-  port: 2053
+  port: 443
   udp: true
   tls: true
   skip-cert-verify: true
@@ -26,25 +26,6 @@ proxies:
   servername: sTiLl-sCeNe-fDa3.DeVtAhAiR.woRkErs.dEv
 - name: 🇬🇧 英国 (United Kingdom) 02 - xiaohe
   server: 172.66.44.77
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /eyJqdW5rIjoiTkNUaFg0ZnJNUjhhcyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
-    headers:
-      Host: MiSty-tooth-78cA.FoboGAH414-e7B.WoRKERs.DEv
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: b8b01773-36b1-4b49-9bd0-6249f52345b4
-  servername: mIsTy-tOoTh-78cA.FoBoGaH414-e7b.woRkErs.dEv
-- name: 🇬🇧 英国 (United Kingdom) 03 - xiaohe
-  server: 172.66.44.77
   port: 2053
   udp: true
   tls: true
@@ -54,7 +35,26 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/Vx07yBri7V5wh8Cy7AWtLi7X3s7Yo
+    path: /vl/xQhNe7rLrdM0emZlaW5LMsNwcoIgnT
+    headers:
+      Host: ikt-kkc25f27k-3tehr8mc.ade-1007.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: d9abc6e3-83bf-4c28-ae68-72465e2abe39
+  servername: iKt-kKc25F27k-3TeHr8mC.AdE-1007.woRkErs.dEv
+- name: 🇬🇧 英国 (United Kingdom) 03 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/gEhxGDADKTiEgtUdymKrE0OV
     headers:
       Host: xaz7ydgqrdkfprd-9vnt.pages.dev
     max-early-data: 2560
@@ -73,52 +73,14 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/BISW52YBBkjMIUiRLCwvRW7uwFZ0dh
+    path: /vl/cxl8Wn1ylnsk63nJ0
     headers:
-      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
+      Host: lhns3ww2-cxq-gj1vvobkepig4nopkc.hqu4v38hi9iftcp6mzfmx-3bmx.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
-  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
-- name: 🇬🇧 英国 (United Kingdom) 05 - xiaohe
-  server: 172.66.44.77
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /eyJqdW5rIjoiN2w4dDlRNVV5NkZ5NU1aeSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
-    headers:
-      Host: ezaccess-project-4c7950.ez-dc9bbb.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 96e341a7-3077-4613-b482-41bd9c90cc4d
-  servername: eZaCcEsS-PrOjEcT-4c7950.eZ-Dc9bBb.woRkErs.dEv
-- name: 🇬🇧 英国 (United Kingdom) 06 - xiaohe
-  server: 172.66.47.179
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /vl/Cs3mIJCuE1gF2DEs1DliXSJTveRR55F
-    headers:
-      Host: xaz7ydgqrdkfprd-9vnt.pages.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 9f25d449-db88-4df9-990c-a9de11dae18d
-  servername: xAz7yDgQrDkFpRd-9VnT.paGEs.DeV
+  uuid: 38d6b629-64c2-4c31-a10d-26eb3a2a053d
+  servername: lHnS3Ww2-CxQ-Gj1vVoBkEpIg4nOpKc.hQu4v38Hi9iFtCp6mZfMx-3BmX.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -129,8 +91,6 @@ proxy-groups:
   - 🇬🇧 英国 (United Kingdom) 02 - xiaohe
   - 🇬🇧 英国 (United Kingdom) 03 - xiaohe
   - 🇬🇧 英国 (United Kingdom) 04 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 05 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 06 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -141,8 +101,6 @@ proxy-groups:
   - 🇬🇧 英国 (United Kingdom) 02 - xiaohe
   - 🇬🇧 英国 (United Kingdom) 03 - xiaohe
   - 🇬🇧 英国 (United Kingdom) 04 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 05 - xiaohe
-  - 🇬🇧 英国 (United Kingdom) 06 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT
