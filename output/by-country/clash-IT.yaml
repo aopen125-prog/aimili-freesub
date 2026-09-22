@@ -5,9 +5,9 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇦🇪 阿联酋 (UAE) 02 - xiaohe
-  server: 172.66.44.77
-  port: 2053
+- name: 🇮🇹 意大利 (Italy) 07 - xiaohe
+  server: 172.66.47.179
+  port: 443
   udp: true
   tls: true
   skip-cert-verify: true
@@ -16,28 +16,28 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /sync
+    path: /@Marisa_kristi
     headers:
-      Host: nahan-core.netizo09.workers.dev
+      Host: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: dc8a9493-c54a-459e-d060-81a700000001
-  servername: nAhAn-cOrE.NeTiZo09.woRkErs.dEv
+  uuid: d5f29a64-da5d-4f99-b3c4-ae92cc39ad5f
+  servername: kE859Ch2gSe1iErY3HiZ.E3Q4A5MjLd11KpJ0Zj8dQ.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+  - 🇮🇹 意大利 (Italy) 07 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+  - 🇮🇹 意大利 (Italy) 07 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

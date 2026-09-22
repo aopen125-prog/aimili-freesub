@@ -4,24 +4,27 @@
   },
   "outbounds": [
     {
-      "type": "vless",
+      "type": "hysteria2",
       "tag": "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe",
-      "server": "clhkzzzdbgwxxndnlm.cfooov.xyz",
-      "server_port": 41341,
-      "uuid": "17ab31f7-c021-4aec-83b2-ab48de8886bd",
-      "flow": "xtls-rprx-vision",
+      "server": "aa683731-tm3mo0-unh4sc-xm0q.nw4.hyhuawei.com",
+      "server_port": 443,
+      "password": "3437f34e-1b77-11eb-8684-f23c913c8d2b",
       "tls": {
         "enabled": true,
-        "server_name": "www.apple.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "HGk0MQ7l4mWgJo1-7PctGx5pf88HECBpLRUtBSemkzY",
-          "short_id": "b93f2026953855c5"
-        }
+        "server_name": "aa683731-tm3mo0-unh4sc-xm0q.nw4.hyhuawei.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇭🇰 中国香港 (Hong Kong) 02 (家宽) - xiaohe",
+      "server": "86cc2a56-tm3mo0-unh4sc-xm0q.hk3.hyhuawei.com",
+      "server_port": 443,
+      "password": "3437f34e-1b77-11eb-8684-f23c913c8d2b",
+      "tls": {
+        "enabled": true,
+        "server_name": "86cc2a56-tm3mo0-unh4sc-xm0q.hk3.hyhuawei.com",
+        "insecure": true
       }
     },
     {
@@ -29,14 +32,16 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe"
+        "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe",
+        "🇭🇰 中国香港 (Hong Kong) 02 (家宽) - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe"
+        "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe",
+        "🇭🇰 中国香港 (Hong Kong) 02 (家宽) - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },

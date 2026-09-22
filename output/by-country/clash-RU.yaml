@@ -5,7 +5,7 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇷🇺 俄罗斯 (Russia) 08 - xiaohe
+- name: 🇷🇺 俄罗斯 (Russia) 07 - xiaohe
   server: 172.66.44.77
   port: 443
   udp: true
@@ -16,28 +16,28 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /vl/lYNtP7z8pJUmfp01tz5wEnuDujJtZ
+    path: /vl/Li1khIHH3DNItJyzraemsPBQvu
     headers:
-      Host: fpoixf69hqt3e6d4urtb.mamadneizeh.workers.dev
+      Host: wgrcqwtkfyqujs43.ghydgdbdbddvv.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 0b41f339-5809-46ef-8351-b03fdc441539
-  servername: fPoIxF69hQt3e6d4uRtB.MaMaDnEiZeH.woRkErs.dEv
+  uuid: 07821f66-cdb7-4c70-9de6-e230cffac470
+  servername: wGrCqWtKfYqUjS43.GhYdGdBdBdDvV.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇷🇺 俄罗斯 (Russia) 08 - xiaohe
+  - 🇷🇺 俄罗斯 (Russia) 07 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇷🇺 俄罗斯 (Russia) 08 - xiaohe
+  - 🇷🇺 俄罗斯 (Russia) 07 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

@@ -7,7 +7,7 @@ log-level: info
 proxies:
 - name: 🇨🇿 捷克 (Czech) 01 - xiaohe
   server: 172.66.47.179
-  port: 443
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -16,33 +16,14 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /eyJqdW5rIjoiZWlPODVjTnhnaSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    path: /vl/qvzh31VgY6yA9AcUDaTiXVVX
     headers:
-      Host: ezaccess-project-f62c30.pages.dev
+      Host: q2-phbest7v2a8iuowpr.g0xigfh41wwnv39y-b3rzmht.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: e56059f1-5a1a-4d0a-a2d0-58ecb4eb2f3f
-  servername: eZaCcEsS-PrOjEcT-F62c30.paGEs.DeV
-- name: 🇨🇿 捷克 (Czech) 02 - xiaohe
-  server: 172.66.47.179
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: kamran01-afgmdq-1.kamran-01.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: a3c51f71-ffb5-4c80-a136-cee4b36d6e85
-  servername: kAmRaN01-AfGmDq-1.kAmRaN-01.woRkErs.dEv
+  uuid: 709b1cf4-a386-4cbf-bcf4-46f03c4788a8
+  servername: q2-PhBeSt7v2a8iUoWpR.G0XiGfH41wWnV39y-b3rZmHt.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -50,7 +31,6 @@ proxy-groups:
   - ⚡ 自动优选
   - DIRECT
   - 🇨🇿 捷克 (Czech) 01 - xiaohe
-  - 🇨🇿 捷克 (Czech) 02 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -58,7 +38,6 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇨🇿 捷克 (Czech) 01 - xiaohe
-  - 🇨🇿 捷克 (Czech) 02 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

@@ -5,25 +5,6 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇸🇬 新加坡 (Singapore) 01 - xiaohe
-  server: 172.66.47.179
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /vl/zXLTmz3hE3szn64f
-    headers:
-      Host: l0n0qgkdttu061g57fhqzbet333s4t.ade-1004.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: bd8c736e-cae1-43d7-b573-9672e6ca4989
-  servername: l0n0qGkDtTu061g57FhQzBeT333S4T.AdE-1004.woRkErs.dEv
 - name: 🇸🇬 新加坡 (Singapore) 02 - xiaohe
   server: 172.66.44.77
   port: 2053
@@ -35,15 +16,34 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /stream/PANEL_ZEUS/48493148ec15
+    path: /pRXE5ot0RZaQSr7B
     headers:
-      Host: cgzdynepurqs.mercury061.workers.dev
+      Host: stf839dvvyog9d2qa4-b8z6ahgn7b7qi.pages.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 50414e45-4c5f-5a45-5553-48493148ec15
-  servername: cGzDyNePuRqS.MeRcUrY061.woRkErs.dEv
+  uuid: b2f2f9f2-1864-48ea-839b-22815faff1f1
+  servername: sTf839dVvYoG9D2Qa4-B8Z6AhGn7b7qI.paGEs.DeV
 - name: 🇸🇬 新加坡 (Singapore) 03 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/3Qe9Fv1V2cqEtXyBQApZYi
+    headers:
+      Host: akbarian34.j9z65ce2uyks.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: b19419fa-8009-455b-b059-765e2856883a
+  servername: aKbArIaN34.J9Z65cE2UyKs.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 04 - xiaohe
   server: 172.66.47.179
   port: 2053
   udp: true
@@ -60,9 +60,9 @@ proxies:
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 12ad647b-fa22-4bad-b27f-f54cb92f962b
+  uuid: d279f394-301e-4cbf-ba56-65e8c061e451
   servername: sXyYvIhKeKtLx4rJxSdJ.PkC73pHpWeU4RbXbAtM444.woRkErs.dEv
-- name: 🇸🇬 新加坡 (Singapore) 14 - xiaohe
+- name: 🇸🇬 新加坡 (Singapore) 13 - xiaohe
   server: 172.66.47.179
   port: 443
   udp: true
@@ -75,21 +75,41 @@ proxies:
   ws-opts:
     path: /@Marisa_kristi
     headers:
-      Host: bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev
+      Host: o-85ley6knn8ut.6nvkygqh144t7xtdyvh0y3o4gzo3ujhnk8n.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: beec57a5-8266-4279-b279-f495bdc70699
-  servername: bApJ1QaPjK4.0SdS0Li1bWcZ0I76iT0GjXv1.woRkErs.dEv
+  uuid: 57c830ca-19a2-441c-811d-db5d81b86b47
+  servername: o-85lEy6kNn8uT.6nVkYgQh144t7xTdYvH0Y3O4GzO3UjHnK8N.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 14 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
+    headers:
+      Host: netlivpn4813.ddhshhshs.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 2388e166-3890-33ae-f77e-efac00000002
+  servername: nEtLiVpN4813.DdHsHhShS.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇸🇬 新加坡 (Singapore) 01 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 02 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 03 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 04 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 13 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 14 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
@@ -97,9 +117,10 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇸🇬 新加坡 (Singapore) 01 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 02 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 03 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 04 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 13 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 14 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT

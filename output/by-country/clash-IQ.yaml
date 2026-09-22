@@ -5,8 +5,8 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇦🇺 澳大利亚 (Australia) 02 - xiaohe
-  server: 172.66.44.77
+- name: 🇮🇶 IQ 01 - xiaohe
+  server: 172.66.47.179
   port: 443
   udp: true
   tls: true
@@ -16,28 +16,28 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /
+    path: /vl/-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN
     headers:
-      Host: dry-butterfly-8eb9.tmpgnacio83.workers.dev
+      Host: wgrcqwtkfyqujs43.ghydgdbdbddvv.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: d042a74a-c305-4eec-a89f-39a348022c92
-  servername: dRy-bUtTeRfLy-8Eb9.TmPgNaCiO83.woRkErs.dEv
+  uuid: 07821f66-cdb7-4c70-9de6-e230cffac470
+  servername: wGrCqWtKfYqUjS43.GhYdGdBdBdDvV.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇦🇺 澳大利亚 (Australia) 02 - xiaohe
+  - 🇮🇶 IQ 01 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇦🇺 澳大利亚 (Australia) 02 - xiaohe
+  - 🇮🇶 IQ 01 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

@@ -6,27 +6,8 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇧🇪 比利时 (Belgium) 01 - xiaohe
-  server: 172.66.47.179
-  port: 443
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /sync
-    headers:
-      Host: vqrlof-pwa5a7-onfjlv.zedbazi061.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 73796e63-0000-4000-8000-000000000007
-  servername: vQrLoF-PwA5A7-oNfJlV.ZeDbAzI061.woRkErs.dEv
-- name: 🇧🇪 比利时 (Belgium) 02 - xiaohe
-  server: 172.66.47.179
-  port: 443
+  server: 172.66.44.77
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -50,7 +31,6 @@ proxy-groups:
   - ⚡ 自动优选
   - DIRECT
   - 🇧🇪 比利时 (Belgium) 01 - xiaohe
-  - 🇧🇪 比利时 (Belgium) 02 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -58,7 +38,6 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇧🇪 比利时 (Belgium) 01 - xiaohe
-  - 🇧🇪 比利时 (Belgium) 02 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT
