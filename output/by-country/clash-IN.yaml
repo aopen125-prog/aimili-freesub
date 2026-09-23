@@ -5,9 +5,9 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇮🇹 意大利 (Italy) 07 - xiaohe
-  server: 172.66.47.179
-  port: 443
+- name: 🇮🇳 印度 (India) 01 - xiaohe
+  server: 172.66.44.77
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -16,28 +16,28 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /@Marisa_kristi
+    path: /
     headers:
-      Host: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
+      Host: odd-violet-5440.asdgrweeee13.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: d5f29a64-da5d-4f99-b3c4-ae92cc39ad5f
-  servername: kE859Ch2gSe1iErY3HiZ.E3Q4A5MjLd11KpJ0Zj8dQ.woRkErs.dEv
+  uuid: 1443b7a1-7ba9-4ec9-b904-2e867367b5d7
+  servername: oDd-vIoLeT-5440.aSdGrWeEeE13.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇮🇹 意大利 (Italy) 07 - xiaohe
+  - 🇮🇳 印度 (India) 01 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇮🇹 意大利 (Italy) 07 - xiaohe
+  - 🇮🇳 印度 (India) 01 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

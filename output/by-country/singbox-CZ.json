@@ -6,26 +6,22 @@
     {
       "type": "vless",
       "tag": "🇨🇿 捷克 (Czech) 01 - xiaohe",
-      "server": "172.67.166.127",
+      "server": "172.66.47.45",
       "server_port": 443,
-      "uuid": "709b1cf4-a386-4cbf-bcf4-46f03c4788a8",
+      "uuid": "e56059f1-5a1a-4d0a-a2d0-58ecb4eb2f3f",
       "tls": {
         "enabled": true,
-        "server_name": "q2-phbest7v2a8iuowpr.g0xigfh41wwnv39y-b3rzmht.workers.dev",
+        "server_name": "ezaccess-project-f62c30.pages.dev",
         "insecure": false,
         "alpn": [
           "http/1.1"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
+        ]
       },
       "transport": {
         "type": "ws",
-        "path": "/vl/qvzh31VgY6yA9AcUDaTiXVVX?ed=2560",
+        "path": "/eyJqdW5rIjoiZWlPODVjTnhnaSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=",
         "headers": {
-          "Host": "q2-phbest7v2a8iuowpr.g0xigfh41wwnv39y-b3rzmht.workers.dev"
+          "Host": "ezaccess-project-f62c30.pages.dev"
         }
       }
     },
