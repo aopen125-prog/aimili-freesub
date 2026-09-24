@@ -16,53 +16,15 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /eyJqdW5rIjoiTEwyZVI5T3BYZDBxTzhPRCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    path: /eyJqdW5rIjoiZUJZR2pXVFByVyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjEwOS4xMjAuMTU4LjE0OSJdfQ==
     headers:
-      Host: 6crihfknlqjdu3yuzco9phspq86dbp6q.christanmoccasin.workers.dev
+      Host: misty-bread-fd96.salehinezhadali.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 7201b2cd-0675-4c1a-9c76-07ca14ffcf08
-  servername: 6CrIhFkNlQjDu3yUzCo9pHsPq86DbP6Q.ChRiStAnMoCcAsIn.woRkErs.dEv
+  uuid: d028eaf5-c5ef-49a0-85c6-4f4816af8053
+  servername: mIsTy-bReAd-fD96.SaLeHiNeZhAdAlI.woRkErs.dEv
 - name: 🇳🇱 荷兰 (Netherlands) 02 - xiaohe
-  server: 172.66.47.179
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /9BozNyvQ8VdRvsYX
-    headers:
-      Host: stf839dvvyog9d2qa4-b8z6ahgn7b7qi.pages.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: b2f2f9f2-1864-48ea-839b-22815faff1f1
-  servername: sTf839dVvYoG9D2Qa4-B8Z6AhGn7b7qI.paGEs.DeV
-- name: 🇳🇱 荷兰 (Netherlands) 03 - xiaohe
-  server: 172.66.47.179
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /eyJqdW5rIjoiN2w4dDlRNVV5NkZ5NU1aeSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
-    headers:
-      Host: ezaccess-project-4c7950.ez-dc9bbb.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: 96e341a7-3077-4613-b482-41bd9c90cc4d
-  servername: eZaCcEsS-PrOjEcT-4c7950.eZ-Dc9bBb.woRkErs.dEv
-- name: 🇳🇱 荷兰 (Netherlands) 04 - xiaohe
   server: 172.66.47.179
   port: 443
   udp: true
@@ -73,14 +35,90 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /
+    path: /vl/2HQNmb5VoOwqKpXPz60zvv8yQeQAS48
     headers:
-      Host: frosty-pond-7436.shhabbyat914.workers.dev
+      Host: zhph1zsu3ass0yd2jjmcdpynmbv.pesareshah975.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: de78c0b1-c5c8-412a-bd92-430d1f2e2642
-  servername: fRoStY-PoNd-7436.ShHaBbYaT914.woRkErs.dEv
+  uuid: c44542db-493d-45dd-ad0e-4479f56e70d8
+  servername: zHpH1ZsU3AsS0Yd2jJmCdPyNmBv.pEsArEsHaH975.woRkErs.dEv
+- name: 🇳🇱 荷兰 (Netherlands) 03 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/lIp8WbnljVYVSeQwjoRQPUGWwnVL
+    headers:
+      Host: dl2uf-ivdezilz3e86rk18.hhvt37tjm2xbosql5hxogn-y.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: af0db32b-2cb0-48c7-b04e-96003f8c2369
+  servername: dL2Uf-iVdEzIlZ3E86rK18.HhVt37TjM2XbOsQl5hXoGn-y.woRkErs.dEv
+- name: 🇳🇱 荷兰 (Netherlands) 04 - xiaohe
+  server: 172.66.44.77
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/nw8XNxNaLw6JVF1rAbo7z
+    headers:
+      Host: bn1jywok-7txq9p7e.fbgbjr7g344b78sqlruz7u621njij.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 3423809a-08e5-4b93-bd76-c6cdcbfd9b52
+  servername: bN1JyWoK-7tXq9p7e.fBgBjR7G344B78sQlRuZ7U621NjIj.woRkErs.dEv
+- name: 🇳🇱 荷兰 (Netherlands) 05 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/Li1khIHH3DNItJyzraemsPBQvu
+    headers:
+      Host: wgrcqwtkfyqujs43.ghydgdbdbddvv.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 07821f66-cdb7-4c70-9de6-e230cffac470
+  servername: wGrCqWtKfYqUjS43.GhYdGdBdBdDvV.woRkErs.dEv
+- name: 🇳🇱 荷兰 (Netherlands) 06 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/Li1khIHH3DNItJyzraemsPBQvu
+    headers:
+      Host: wgrcqwtkfyqujs43.ghydgdbdbddvv.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 07821f66-cdb7-4c70-9de6-e230cffac470
+  servername: wGrCqWtKfYqUjS43.GhYdGdBdBdDvV.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -91,6 +129,8 @@ proxy-groups:
   - 🇳🇱 荷兰 (Netherlands) 02 - xiaohe
   - 🇳🇱 荷兰 (Netherlands) 03 - xiaohe
   - 🇳🇱 荷兰 (Netherlands) 04 - xiaohe
+  - 🇳🇱 荷兰 (Netherlands) 05 - xiaohe
+  - 🇳🇱 荷兰 (Netherlands) 06 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -101,6 +141,8 @@ proxy-groups:
   - 🇳🇱 荷兰 (Netherlands) 02 - xiaohe
   - 🇳🇱 荷兰 (Netherlands) 03 - xiaohe
   - 🇳🇱 荷兰 (Netherlands) 04 - xiaohe
+  - 🇳🇱 荷兰 (Netherlands) 05 - xiaohe
+  - 🇳🇱 荷兰 (Netherlands) 06 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

@@ -6,8 +6,8 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇮🇳 印度 (India) 01 - xiaohe
-  server: 172.66.44.77
-  port: 2053
+  server: 172.66.47.179
+  port: 443
   udp: true
   tls: true
   skip-cert-verify: true

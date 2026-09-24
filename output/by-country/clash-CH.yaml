@@ -5,27 +5,8 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇨🇭 瑞士 (Switzerland) 02 - xiaohe
-  server: 172.66.44.77
-  port: 2053
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    headers:
-      Host: netlivpn2950.bbxff.workers.dev
-    max-early-data: 2560
-    early-data-header-name: Sec-WebSocket-Protocol
-  type: vless
-  uuid: bd9ff08b-d042-3650-48e4-c4b400000000
-  servername: nEtLiVpN2950.BbXfF.woRkErs.dEv
-- name: 🇨🇭 瑞士 (Switzerland) 05 - xiaohe
-  server: 172.66.44.77
+- name: 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
+  server: 172.66.47.179
   port: 443
   udp: true
   tls: true
@@ -49,16 +30,14 @@ proxy-groups:
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇨🇭 瑞士 (Switzerland) 02 - xiaohe
-  - 🇨🇭 瑞士 (Switzerland) 05 - xiaohe
+  - 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇨🇭 瑞士 (Switzerland) 02 - xiaohe
-  - 🇨🇭 瑞士 (Switzerland) 05 - xiaohe
+  - 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

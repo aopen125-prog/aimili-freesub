@@ -6,8 +6,8 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇺🇿 乌兹别克斯坦 (Uzbekistan) 01 - xiaohe
-  server: 172.66.47.179
-  port: 2053
+  server: 172.66.44.77
+  port: 443
   udp: true
   tls: true
   skip-cert-verify: true
@@ -16,7 +16,7 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: '/stream/PANEL_ZEUS/4eef5adc237a/loc-1 '
+    path: /stream/PANEL_ZEUS/4eef5adc237a/loc-1
     headers:
       Host: r5zenrelur2s.pqzdileiu8es.workers.dev
     max-early-data: 2560

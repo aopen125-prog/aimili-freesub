@@ -6,7 +6,7 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇧🇪 比利时 (Belgium) 01 - xiaohe
-  server: 172.66.47.179
+  server: 172.66.44.77
   port: 443
   udp: true
   tls: true
@@ -22,7 +22,7 @@ proxies:
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: fa45096d-bed0-ad80-c773-23c30000001b
+  uuid: fa45096d-bed0-ad80-c773-23c300000003
   servername: xO3UbK-C97eQl-n2d4a9.ShOaMeNi17.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择

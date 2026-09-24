@@ -5,8 +5,8 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇨🇿 捷克 (Czech) 01 - xiaohe
-  server: 172.66.44.77
+- name: 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
+  server: 172.66.47.179
   port: 443
   udp: true
   tls: true
@@ -16,28 +16,28 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /eyJqdW5rIjoiZWlPODVjTnhnaSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    path: /vl/zM8ELyqEIYeZ3ijacV9kuK
     headers:
-      Host: ezaccess-project-f62c30.pages.dev
+      Host: kievh9yxcgg14-gy4wxqcav0pegkd.d-0ezpk5xp5wk8ltdgb6evlpgc-jin.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: e56059f1-5a1a-4d0a-a2d0-58ecb4eb2f3f
-  servername: eZaCcEsS-PrOjEcT-F62c30.paGEs.DeV
+  uuid: daf485ba-60fc-4166-a72c-8d2a5407cbc5
+  servername: kIeVh9yXcGg14-gY4WxQcAv0pEgKd.d-0EzPk5xP5Wk8lTdGb6eVlPgC-JiN.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇨🇿 捷克 (Czech) 01 - xiaohe
+  - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇨🇿 捷克 (Czech) 01 - xiaohe
+  - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

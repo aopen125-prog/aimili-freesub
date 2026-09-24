@@ -1,0 +1,44 @@
+mixed-port: 7890
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+proxies:
+- name: 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: '/sync '
+    headers:
+      Host: xo3ubk-c97eql-n2d4a9.shoameni17.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: fa45096d-bed0-ad80-c773-23c300000018
+  servername: xO3UbK-C97eQl-n2d4a9.ShOaMeNi17.woRkErs.dEv
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - ⚡ 自动优选
+  - DIRECT
+  - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+- name: ⚡ 自动优选
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 🇦🇪 阿联酋 (UAE) 02 - xiaohe
+rules:
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择
