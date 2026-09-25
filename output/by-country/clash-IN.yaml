@@ -6,7 +6,7 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇮🇳 印度 (India) 01 - xiaohe
-  server: 172.66.47.179
+  server: 172.66.44.77
   port: 443
   udp: true
   tls: true
@@ -18,12 +18,12 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: odd-violet-5440.asdgrweeee13.workers.dev
+      Host: vms.lifetime54.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 1443b7a1-7ba9-4ec9-b904-2e867367b5d7
-  servername: oDd-vIoLeT-5440.aSdGrWeEeE13.woRkErs.dEv
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: vMs.lIfEtImE54.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select

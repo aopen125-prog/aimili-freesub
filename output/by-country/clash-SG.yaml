@@ -5,6 +5,44 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
+- name: 🇸🇬 新加坡 (Singapore) 01 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiVXFEMlhKZVY4dzNoTUtpZCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    headers:
+      Host: tight-bush-0bb4.bshxyyxhdjdggb.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 934f2038-17f8-4ec5-9204-8381e19fc6e3
+  servername: tIgHt-bUsH-0bB4.bShXyYxHdJdGgB.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 02 - xiaohe
+  server: 172.66.47.179
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiSGdhak9tRkZLeDdwcCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    headers:
+      Host: 001.inc-electrocell-001-001.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 5b14b2cf-57e3-4f96-92f2-9695078f06d8
+  servername: 001.iNc-eLeCtRoCeLl-001-001.woRkErs.dEv
 - name: 🇸🇬 新加坡 (Singapore) 03 - xiaohe
   server: 172.66.44.77
   port: 443
@@ -16,17 +54,17 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /138.2.74.219-28616
+    path: /vl/Li1khIHH3DNItJyzraemsPBQvu
     headers:
-      Host: nautica-cff.kloningstrife002.workers.dev
+      Host: wgrcqwtkfyqujs43.ghydgdbdbddvv.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
-  servername: nAuTiCa-cFf.kLoNiNgStRiFe002.woRkErs.dEv
-- name: 🇸🇬 新加坡 (Singapore) 06 - xiaohe
+  uuid: 07821f66-cdb7-4c70-9de6-e230cffac470
+  servername: wGrCqWtKfYqUjS43.GhYdGdBdBdDvV.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 04 - xiaohe
   server: 172.66.44.77
-  port: 2053
+  port: 443
   udp: true
   tls: true
   skip-cert-verify: true
@@ -35,15 +73,91 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
+    path: /vl/eD9EJBUcnqK64mcZh
     headers:
-      Host: netlivpn4813.ddhshhshs.workers.dev
+      Host: q2-phbest7v2a8iuowpr.g0xigfh41wwnv39y-b3rzmht.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 2388e166-3890-33ae-f77e-efac00000002
-  servername: nEtLiVpN4813.DdHsHhShS.woRkErs.dEv
+  uuid: 709b1cf4-a386-4cbf-bcf4-46f03c4788a8
+  servername: q2-PhBeSt7v2a8iUoWpR.G0XiGfH41wWnV39y-b3rZmHt.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 05 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/ERYN0G44hia16zhR
+    headers:
+      Host: 05a5f9v5a6cm563ieoye7j-8tnpd.hsysyegegrygvvvdujhh.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 527451fe-ee1f-4e6f-94ca-808f055f7c9b
+  servername: 05a5f9v5a6cM563IeOyE7J-8tNpD.HsYsYeGeGrYgVvVdUjHh.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 06 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vl/lYNtP7z8pJUmfp01tz5wEnuDujJtZ
+    headers:
+      Host: fpoixf69hqt3e6d4urtb.mamadneizeh.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 0b41f339-5809-46ef-8351-b03fdc441539
+  servername: fPoIxF69hQt3e6d4uRtB.MaMaDnEiZeH.woRkErs.dEv
 - name: 🇸🇬 新加坡 (Singapore) 07 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 0e8371c0-0287-4805-a882-42a7b482a9de
+  servername: 3T1YvByLa-rJ740G.28M7R63dTtYa6gAzMhOo.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 08 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 04d2aebd-246f-4348-805f-a8e6840365fc
+  servername: 2-gYs60WmZb6bQzD.QpSjN114Hh3vLpH9Z60sEsZ0AgJaWpWrOnEg.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 09 - xiaohe
   server: 172.66.44.77
   port: 443
   udp: true
@@ -56,30 +170,84 @@ proxies:
   ws-opts:
     path: /@Marisa_kristi
     headers:
-      Host: 9-7u3b6e.wzkija0v0du4yhk6jfyfafml3nh22kne.workers.dev
+      Host: sxyyvihkektlx4rjxsdj.pkc73phpweu4rbxbatm444.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: d731cf09-79a6-4647-aabe-8e0fda4fe3be
-  servername: 9-7U3B6E.WzKiJa0v0dU4YhK6JfYfAfMl3nH22kNe.woRkErs.dEv
+  uuid: 0519a0b8-85ac-4955-acdf-85084b0514e5
+  servername: sXyYvIhKeKtLx4rJxSdJ.PkC73pHpWeU4RbXbAtM444.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 15 - xiaohe
+  server: 172.66.44.77
+  port: 2053
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: d-l28t5-65-b.pbe40wmcujaw726h7cpqernzmawz4stwtrnqve0n1s5reht.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 6c7c10f8-2387-4756-ab4b-64c9c6981f0e
+  servername: d-l28T5-65-B.PbE40wMcUjAw726h7cPqErNzMaWz4sTwTrNqVe0n1s5rEhT.woRkErs.dEv
+- name: 🇸🇬 新加坡 (Singapore) 19 - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: 75f440b2-2cf8-45e7-9565-af7fde5bacc2
+  servername: 3TmJ2EgTm-fNo.49bNiThZk8vPhYbV36d1z1xKzFvOgT2M6.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
+  - 🇸🇬 新加坡 (Singapore) 01 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 02 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 03 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 04 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 05 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 06 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 07 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 08 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 09 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 15 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 19 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - 🇸🇬 新加坡 (Singapore) 01 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 02 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 03 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 04 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 05 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 06 - xiaohe
   - 🇸🇬 新加坡 (Singapore) 07 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 08 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 09 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 15 - xiaohe
+  - 🇸🇬 新加坡 (Singapore) 19 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

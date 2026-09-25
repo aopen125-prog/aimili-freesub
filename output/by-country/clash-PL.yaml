@@ -5,9 +5,9 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇮🇪 爱尔兰 (Ireland) 01 - xiaohe
+- name: 🇵🇱 波兰 (Poland) 01 - xiaohe
   server: 172.66.44.77
-  port: 2053
+  port: 443
   udp: true
   tls: true
   skip-cert-verify: true
@@ -18,26 +18,26 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: vms.lifetime37.workers.dev
+      Host: khoda.ak-khoda.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: vMs.lIfEtImE37.woRkErs.dEv
+  uuid: e6cc4788-3c45-4df1-94f3-8303504a65bf
+  servername: kHoDa.aK-KhOdA.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇮🇪 爱尔兰 (Ireland) 01 - xiaohe
+  - 🇵🇱 波兰 (Poland) 01 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇮🇪 爱尔兰 (Ireland) 01 - xiaohe
+  - 🇵🇱 波兰 (Poland) 01 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

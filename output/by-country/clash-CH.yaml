@@ -6,8 +6,8 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
-  server: 172.66.47.179
-  port: 443
+  server: 172.66.44.77
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -18,12 +18,12 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: netlivpn2584.vjvdgbc.workers.dev
+      Host: vms.lifetime11.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 7074b9d7-2183-8919-fc11-ca5e00000000
-  servername: nEtLiVpN2584.VjVdGbC.woRkErs.dEv
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: vMs.lIfEtImE11.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
