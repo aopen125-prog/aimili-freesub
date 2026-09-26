@@ -6,7 +6,7 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇵🇱 波兰 (Poland) 01 - xiaohe
-  server: 172.66.44.77
+  server: 172.66.47.179
   port: 443
   udp: true
   tls: true
@@ -16,7 +16,7 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /
+    path: /sync
     headers:
       Host: khoda.ak-khoda.workers.dev
     max-early-data: 2560

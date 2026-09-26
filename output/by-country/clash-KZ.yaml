@@ -5,8 +5,8 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
-  server: 172.66.44.77
+- name: 🇰🇿 哈萨克斯坦 (Kazakhstan) 06 - xiaohe
+  server: 172.66.47.179
   port: 2053
   udp: true
   tls: true
@@ -16,28 +16,28 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: /
+    path: /stream/PANEL_ZEUS/9e260f5cfff1/loc-0
     headers:
-      Host: vms.lifetime11.workers.dev
+      Host: imzajnekupas.a3-60-morteza.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: vMs.lIfEtImE11.woRkErs.dEv
+  uuid: 7a657573-627d-c5d7-4e7b-9e260f5cfff1
+  servername: iMzAjNeKuPaS.A3-60-MoRtEzA.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
+  - 🇰🇿 哈萨克斯坦 (Kazakhstan) 06 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
+  - 🇰🇿 哈萨克斯坦 (Kazakhstan) 06 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

@@ -5,8 +5,8 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇯🇵 日本 (Japan) 04 (家宽) - xiaohe
-  server: 172.66.44.77
+- name: 🇯🇵 日本 (Japan) 02 (家宽) - xiaohe
+  server: 172.66.47.179
   port: 2053
   udp: true
   tls: true
@@ -18,12 +18,31 @@ proxies:
   ws-opts:
     path: /@Marisa_kristi
     headers:
-      Host: 3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev
+      Host: kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 903fed13-8e78-4fa2-a83e-b392b289741f
-  servername: 3TmJ2EgTm-fNo.49bNiThZk8vPhYbV36d1z1xKzFvOgT2M6.woRkErs.dEv
+  uuid: 19d767db-da16-4263-87ec-fd6cacf69ba7
+  servername: kQjIfHg9rW.TrAdSc8p9xP7WxYqMc1wY0Ah.woRkErs.dEv
+- name: 🇯🇵 日本 (Japan) 03 (家宽) - xiaohe
+  server: 172.66.47.179
+  port: 443
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
+    max-early-data: 2560
+    early-data-header-name: Sec-WebSocket-Protocol
+  type: vless
+  uuid: fd9172bb-1a14-4052-8385-40de84e47495
+  servername: mW5QiSaV.WjWqViE0Wb1eQhB8E83cLqDoQ3M5P9A4On.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -31,26 +50,30 @@ proxy-groups:
   - ⚡ 自动优选
   - 🏠 住宅家宽
   - DIRECT
-  - 🇯🇵 日本 (Japan) 04 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 02 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 03 (家宽) - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇯🇵 日本 (Japan) 04 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 02 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 03 (家宽) - xiaohe
 - name: 🏠 住宅家宽
   type: select
   proxies:
   - ⚡ 家宽优选
-  - 🇯🇵 日本 (Japan) 04 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 02 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 03 (家宽) - xiaohe
 - name: ⚡ 家宽优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇯🇵 日本 (Japan) 04 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 02 (家宽) - xiaohe
+  - 🇯🇵 日本 (Japan) 03 (家宽) - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

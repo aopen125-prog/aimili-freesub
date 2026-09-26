@@ -5,9 +5,9 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇺🇿 乌兹别克斯坦 (Uzbekistan) 01 - xiaohe
+- name: 🇧🇬 保加利亚 (Bulgaria) 04 - xiaohe
   server: 172.66.44.77
-  port: 443
+  port: 2053
   udp: true
   tls: true
   skip-cert-verify: true
@@ -16,28 +16,28 @@ proxies:
   - http/1.1
   network: ws
   ws-opts:
-    path: '/stream/PANEL_ZEUS/4eef5adc237a/loc-1 '
+    path: /
     headers:
-      Host: r5zenrelur2s.pqzdileiu8es.workers.dev
+      Host: netlivpn4813.ddhshhshs.workers.dev
     max-early-data: 2560
     early-data-header-name: Sec-WebSocket-Protocol
   type: vless
-  uuid: 50414e45-4c5f-5a45-5553-4eef5adc237a
-  servername: r5zEnReLuR2S.PqZdIlEiU8Es.woRkErs.dEv
+  uuid: 2388e166-3890-33ae-f77e-efac00000001
+  servername: nEtLiVpN4813.DdHsHhShS.woRkErs.dEv
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ⚡ 自动优选
   - DIRECT
-  - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 01 - xiaohe
+  - 🇧🇬 保加利亚 (Bulgaria) 04 - xiaohe
 - name: ⚡ 自动优选
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇺🇿 乌兹别克斯坦 (Uzbekistan) 01 - xiaohe
+  - 🇧🇬 保加利亚 (Bulgaria) 04 - xiaohe
 rules:
 - GEOIP,LAN,DIRECT
 - GEOIP,CN,DIRECT

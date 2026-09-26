@@ -6,7 +6,7 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇱🇺 卢森堡 (Luxembourg) 01 - xiaohe
-  server: 172.66.47.179
+  server: 172.66.44.77
   port: 443
   udp: true
   tls: true
